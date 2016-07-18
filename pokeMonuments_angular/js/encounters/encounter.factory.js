@@ -9,9 +9,8 @@
   ]);
 
   function EncounterFactoryFunction($resource){
-    return $resource("http://localhost:8080/pokeMonuments_angular/:id", {}, {
+    return $resource("http://localhost:8080/encounters/:id", {}, {
       update: {method: "PUT"}
     });
   }
 }());
- 
