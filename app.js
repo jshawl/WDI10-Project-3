@@ -63,7 +63,6 @@
           controller: "CharacterShowController",
           controllerAs: "CharacterShowViewModel"
         });
-
       }
     }
   }
