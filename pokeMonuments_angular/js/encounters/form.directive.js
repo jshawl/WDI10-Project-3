@@ -2,7 +2,7 @@
 
 (function(){
   angular
-  .module("encounter")
+  .module("encounters")
   .directive("encounterForm", [
     "EncounterFactory",
     "$state",
@@ -35,4 +35,3 @@
     }
   }
 }());
- 

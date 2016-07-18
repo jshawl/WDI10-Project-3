@@ -2,7 +2,7 @@
 
 (function(){
   angular
-  .module("monument")
+  .module("monuments")
   .directive("monumentForm", [
     "MonumentFactory",
     "$state",
@@ -11,9 +11,9 @@
 
   function MonumentFormDirectiveFunction(MonumentFactory, $state){
     return{
-      templateUrl: "js/monuments/form.html",
+      templateUrl: "pokemonuments_angular/js/monuments/form.html",
       scope: {
-        grumble: "="
+      monument: "="
       },
       link: function(scope){
         scope.create = function(){
@@ -35,4 +35,3 @@
     }
   }
 }());
- 

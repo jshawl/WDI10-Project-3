@@ -2,7 +2,7 @@
 
 (function(){
   angular
-  .module("pokeMonuments", [
+  .module("pokemonuments_angular", [
     "ui.router",
     "monuments",
     "encounters",
@@ -19,7 +19,7 @@
     $stateProvider
     .state("monumentIndex", {
       url: "/",
-      templateUrl: "js/monuments/index.html",
+      templateUrl: "pokemonuments_angular/js/monuments/index.html",
       controller: "MonumentIndexController",
       controllerAs: "MonumentIndexViewModel"
     })
@@ -36,7 +36,7 @@
       $stateProvider
       .state("encounterIndex", {
         url: "/",
-        templateUrl: "js/encounters/index.html",
+        templateUrl: "pokemonuments_angular/js/encounters/index.html",
         controller: "EncounterIndexController",
         controllerAs: "EncounterIndexViewModel"
       })
@@ -53,7 +53,7 @@
         $stateProvider
         .state("characterIndex", {
           url: "/",
-          templateUrl: "js/characters/index.html",
+          templateUrl: "pokemonuments_angular/js/characters/index.html",
           controller: "CharacterIndexController",
           controllerAs: "CharacterIndexViewModel"
         })

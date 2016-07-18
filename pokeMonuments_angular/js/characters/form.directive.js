@@ -2,7 +2,7 @@
 
 (function(){
   angular
-  .module("character")
+  .module("characters")
   .directive("characterForm", [
     "CharacterFactory",
     "$state",
@@ -35,4 +35,3 @@
     }
   }
 }());
- 
