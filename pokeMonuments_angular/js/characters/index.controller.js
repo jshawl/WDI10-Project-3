@@ -13,3 +13,4 @@
     this.newCharacter = new CharacterFactory();
   }
 }());
+ 

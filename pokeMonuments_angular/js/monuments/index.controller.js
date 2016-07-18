@@ -13,3 +13,4 @@
     this.newMonument = new MonumentFactory();
   }
 }());
+ 

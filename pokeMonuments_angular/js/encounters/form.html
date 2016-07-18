@@ -1,0 +1,11 @@
+<form>
+  <input placeholder="Name" data-ng-model="encounter.name" />
+  <input placeholder="Pokemon ID" data-ng-model="encounter.id" />
+  <input placeholder="Description" data-ng-model="encounter.description" />
+  <button type="button" data-ng-if="!character.id" data-ng-click="create()">Create</button>
+  <div data-ng-if="encounter.id">
+    <button type="button" data-ng-click="update()">Update</button>
+    <button type="button" data-ng-click="delete()">Delete</button>
+  </div>
+</form>
+ 
