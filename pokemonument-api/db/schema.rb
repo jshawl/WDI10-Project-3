@@ -26,18 +26,17 @@ ActiveRecord::Schema.define(version: 20160718150613) do
   create_table "encounters", force: :cascade do |t|
     t.integer  "character_id"
     t.integer  "site_id"
-    t.text     "comments"
+    t.text     "comment"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
 
   create_table "monuments", force: :cascade do |t|
     t.string   "site"
-    t.integer  "site_id"
     t.integer  "address"
     t.integer  "zip"
     t.text     "description"
-    t.integer  "photo_url"
+    t.string   "photo_url"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
