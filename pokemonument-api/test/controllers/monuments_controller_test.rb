@@ -17,7 +17,7 @@ class MonumentsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create monument" do
     assert_difference('Monument.count') do
-      post monuments_url, params: { monument: { [site: @monument.[site, address: @monument.address, site_id: @monument.site_id } }
+      post monuments_url, params: { monument: { [site: @monument.[site, address: @monument.address, description: @monument.description, photo_url: @monument.photo_url, site_id: @monument.site_id, zip: @monument.zip } }
     end
 
     assert_redirected_to monument_url(Monument.last)
@@ -34,7 +34,7 @@ class MonumentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update monument" do
-    patch monument_url(@monument), params: { monument: { [site: @monument.[site, address: @monument.address, site_id: @monument.site_id } }
+    patch monument_url(@monument), params: { monument: { [site: @monument.[site, address: @monument.address, description: @monument.description, photo_url: @monument.photo_url, site_id: @monument.site_id, zip: @monument.zip } }
     assert_redirected_to monument_url(@monument)
   end
 
