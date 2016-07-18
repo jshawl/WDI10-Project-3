@@ -13,3 +13,4 @@
     this.monument = MonumentFactory.get({id: $stateParams.id});
   }
 }());
+ 

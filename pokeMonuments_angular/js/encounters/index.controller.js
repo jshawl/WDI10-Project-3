@@ -13,3 +13,4 @@
     this.newEncounter = new EncounterFactory();
   }
 }());
+ 

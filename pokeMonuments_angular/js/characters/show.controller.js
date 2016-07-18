@@ -12,4 +12,4 @@
   function CharacterShowControllerFunction(CharacterFactory, $stateParams){
     this.character = CharacterFactory.get({id: $stateParams.id});
   }
-}());
+}()); 

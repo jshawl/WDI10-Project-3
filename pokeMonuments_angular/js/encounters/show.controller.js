@@ -13,3 +13,4 @@
     this.encounter = EncounterFactory.get({id: $stateParams.id});
   }
 }());
+ 
