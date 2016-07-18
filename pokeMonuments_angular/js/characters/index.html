@@ -1,0 +1,9 @@
+<h2>pokeMonuments</h2>
+
+<div data-character-form data-character="CharacterIndexViewModel.newCharacter"></div>
+
+<h2>These are all the pokeMonuments</h2>
+
+<div data-ng-repeat="character in CharacterIndexViewModel.characters | orderBy:'-created_at'">
+  <p><a data-ui-sref="characterShow({id: character.id})">{{character.title}}</a></p>
+</div>

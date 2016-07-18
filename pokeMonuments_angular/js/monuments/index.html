@@ -1,0 +1,9 @@
+<h2>pokeMonuments</h2>
+
+<div data-monument-form data-monument="MonumentIndexViewModel.newMonument"></div>
+
+<h2>These are all the Monuments</h2>
+
+<div data-ng-repeat="monuments in MonumentIndexViewModel.monument | orderBy:'-created_at'">
+  <p><a data-ui-sref="monumentShow({id: character.id})">{{monument.title}}</a></p>
+</div>
