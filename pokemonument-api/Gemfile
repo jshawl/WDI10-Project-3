@@ -25,6 +25,8 @@ gem 'jbuilder', '~> 2.5'
 # Per http://angular-rails.com/bootstrap.html
 gem 'bower-rails'
 
+gem "handle_invalid_percent_encoding_requests"
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
