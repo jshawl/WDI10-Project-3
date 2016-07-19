@@ -9,7 +9,7 @@
   ]);
 
   function MonumentFactoryFunction($resource){
-    return $resource("http://localhost:8080/monuments/:id", {}, {
+    return $resource("http://localhost:3000/monuments", {}, {
       update: {method: "PUT"}
     });
 

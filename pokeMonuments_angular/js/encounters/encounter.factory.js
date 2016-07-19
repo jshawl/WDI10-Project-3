@@ -9,7 +9,7 @@
   ]);
 
   function EncounterFactoryFunction($resource){
-    return $resource("http://localhost:8080/encounters/:id", {}, {
+    return $resource("http://localhost:3000/encounters", {}, {
       update: {method: "PUT"}
     });
   }
