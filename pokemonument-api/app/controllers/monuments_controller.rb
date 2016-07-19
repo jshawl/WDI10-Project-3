@@ -5,60 +5,51 @@ class MonumentsController < ApplicationController
   # GET /monuments.json
   def index
     @monuments = Monument.all
+    render json: @monuments
   end
 
   # GET /monuments/1
   # GET /monuments/1.json
   def show
+    render json: @monument
   end
 
-  # GET /monuments/new
+  # # GET /monuments/new
   def new
     @monument = Monument.new
+    render json: @monument
   end
 
   # GET /monuments/1/edit
   def edit
+    render json: @monument
   end
 
   # POST /monuments
   # POST /monuments.json
   def create
     @monument = Monument.new(monument_params)
-
-    respond_to do |format|
-      if @monument.save
-        format.html { redirect_to @monument, notice: 'Monument was successfully created.' }
-        format.json { render :show, status: :created, location: @monument }
-      else
-        format.html { render :new }
-        format.json { render json: @monument.errors, status: :unprocessable_entity }
-      end
+    @monument.save
+      render json: @monument, status: :created, location: @monument
+    else
+      render json: @monument.errors, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /monuments/1
   # PATCH/PUT /monuments/1.json
   def update
-    respond_to do |format|
-      if @monument.update(monument_params)
-        format.html { redirect_to @monument, notice: 'Monument was successfully updated.' }
-        format.json { render :show, status: :ok, location: @monument }
-      else
-        format.html { render :edit }
-        format.json { render json: @monument.errors, status: :unprocessable_entity }
+    if @monument.update(monument_params)
+          render json: @monument
+        else
+          render json: @monument.errors, status: :unprocessable_entity
       end
-    end
   end
 
   # DELETE /monuments/1
   # DELETE /monuments/1.json
   def destroy
     @monument.destroy
-    respond_to do |format|
-      format.html { redirect_to monuments_url, notice: 'Monument was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
 
   private

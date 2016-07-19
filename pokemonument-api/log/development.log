@@ -1714,3 +1714,1518 @@ Processing by EncountersController#index as HTML
 Completed 200 OK in 25ms (Views: 21.9ms | ActiveRecord: 0.5ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4900479451371593985);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4900479451371593985)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'characters'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'encounters'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'monuments'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[31mDELETE FROM "monuments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["site", "Arlington National Cemetery"], ["address", 0], ["zip", 22211], ["description", "Arlington National Cemetery occupies 612 acres in Virginia on the Potomac River, directly opposite Washington. In 1864, Arlington became a military cemetery. More than 240,000 service members and their dependents are buried there. In 1921, an Unknown American Soldier of World War I was buried in the cemetery. The monument at the Tomb of the Unknown Soldier was opened to the public in 1932. Two additional Unknowns, one from World War II and one from the Korean War, were buried there on May 30, 1958. The Unknown Serviceman of Vietnam was buried on May 28, 1984. In June 1998 he was identified as First Lt. Michael Blassie, an Air Force pilot from St. Louis. The inscription carved on the Tomb of the Unknowns reads: HERE RESTS IN HONORED GLORY AN AMERICAN SOLDIER KNOWN BUT TO GOD"], ["photo_url", "arlington_national_cemetery.png"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["site", "Capitol Building"], ["address", 0], ["zip", 20004], ["description", "This is where Congress meets and conducts business. It is located on the east end of the Mall. Construction of the building started in 1792, and its design was modified several times, until it was finished in 1865. The Capitol's most recognizable feature is the 180-foot-high cast iron dome of the Great Rotunda. In addition to its historical association, the Capitol Building is also a vast artistic treasure house. The works of such famous artists as Gilbert Stuart, Rembrandt Peale and John Trumbull are displayed on the walls. The Great Rotunda is decorated with a massive fresco by Constantino Brumidi. A monorail subway joins the House and Senate wings of the Capitol with the Congressional office buildings."], ["photo_url", "capitol_building.jpg"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["site", "Jefferson Memorial"], ["address", 701], ["zip", 20242], ["description", "In 1934, Congress authorized the construction of a memorial to honor Thomas Jefferson, the third President of the United States. He is considered the political philosopher of the American Revolution. He also drafted the Declaration of Independence. Architect John Russell Pope, who designed the memorial, used some of Jefferson's own architectural preferences in his design. The memorial, like Jefferson's home in Monticello, is based on the Roman Pantheon. Construction of the circular marble building was finished in 1943. It is located near the Potomac River and overlooks the Tidal Basin, which is surrounded by Japanese flowering cherry trees."], ["photo_url", "jefferson_memorial.png"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["site", "Lincoln Memorial"], ["address", 2], ["zip", 20037], ["description", "Construction of this memorial to the 16th President of the United States started in 1914 and was completed in 1922. It is located on the west end of the Mall. Architect Henry Bacon modeled the marble, granite and limestone building after the Greek Parthenon. The inside of the memorial is divided into three chambers: central, north and south. A white marble statue of President Lincoln sits in the central chamber. The Gettysburg Address, which Lincoln gave on November 19, 1863, at Gettysburg, Pennsylvania , is in the south chamber, and his second inaugural speech is in the north chamber. The 36 Doric columns on the outside of the memorial represent the number of states in the Union at the time of Lincoln's death in 1865."], ["photo_url", "lincoln-memorial.jpg"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["site", "National Archives"], ["address", 700], ["zip", 20560], ["description", "The National Archives is the official library where the records of the three branches of the U.S. government are kept and preserved. The Declaration of Independence, the Constitution and the Bill of Rights are on display here. A collection of pictures taken during the Civil War by the famous photographer Matthew Brady are also on display. The building is located on Constitution Avenue in Washington, D.C. The agency was created in 1934 and the building was completed in 1935."], ["photo_url", "national_archives.jpg"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["site", "Smithsonian Castle"], ["address", 1000], ["zip", 20560], ["description", "A rich English researcher, James Smithson, left all his money to create a museum in Washington, D.C. to 'the increase and diffusion of knowledge.' And he never even visited the United States! He also left his scientific library and his collection of minerals for the new museum. The Smithsonian is not just one building. It is a network of museums and art galleries, research projects and special performances. It includes 14 museums. Some of them are the National Air and Space Museum, the Museum of Natural History and the National Portrait Gallery."], ["photo_url", "smithsonian-castle.jpg"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["site", "Washington Monument"], ["description", "Construction of this magnificent Washington, D.C., monument took nearly a century of planning, building and controversy. The first plans, which were dropped, called for a large equestrian statue of George Washington. After Washington's death in 1797, a memorial was discussed, only to be delayed again. Finally, in 1848, work started on the monument that stands today. After more fits and starts, the monument was finished in 1884 and opened to the public in 1888. The tapered shaft, or obelisk, is made of stone and is covered with white marble. The monument stands just over 555 feet. Memorial stones from the 50 States, foreign countries and organizations line the inside walls. The top of the monument, which you can get to only by elevator, provides a panoramic view of the city."], ["photo_url", "washington_monument.png"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["site", "White House"], ["address", 1600], ["zip", 20500], ["description", "The 132-room White House is the official residence of the president. It is located at 1600 Pennsylvania Avenue. President George Washington chose the site in 1792 and supervised construction. The architect was James Hoban. The mansion was not finished until 1800, so Washington is the only president who never lived in the White House. The British burned the building in 1814, during the War of 1812. The rooms for public functions are on the first floor. The second and third floors are used as the residence of the president and first family. The most celebrated public room is the East Room, where formal receptions take place. Other public rooms are the Red Room, the Green Room and the Blue Room. The State Dining Room is used for formal dinners."], ["photo_url", "white-house.png"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "National Zoo"], ["address", 3001], ["zip", 20008], ["photo_url", "national-zoo.jpg"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "Air & Space Museum"], ["address", 600], ["zip", 20560], ["photo_url", "air-and-space.jpg"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "Museum of the American Indian"], ["address", 4], ["zip", 20560], ["photo_url", "american-indian.jpg"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "Natural History Museum"], ["address", 10], ["zip", 20560], ["photo_url", "natural-history.jpg"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "Constitution Gardens"], ["address", 1850], ["zip", 20560], ["photo_url", "constition-gardens.jpg"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["site", "Franklin Delano Roosevelt Memorial"], ["address", 1850], ["zip", 20242], ["description", "The Franklin Delano Roosevelt Memorial is a testament to one of America's most beloved presidents. In honor of President Roosevelt's four terms in office, the monument is divided into four outdoor 'rooms,' where visitors are able to view myriad statues and murals representing issues from the Great Depression to World War II. When visiting the memorial, visitors have the opportunity to learn about and reflect on some of the most significant events in this country's history, while enjoying some of the best views of the Tidal Basin and iconic cherry blossom trees that surround it."], ["photo_url", "fdr-memorial-2.jpg"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["site", "Martin Luther King, Jr. Memorial"], ["address", 1964], ["zip", 20024], ["description", "Dedicated in 2011, the Martin Luther King, Jr. Memorial exemplifies the fundamental values of Dr. King during his quest for equal rights for all citizens.  Inspired by Dr. King's 'I Have a Dream' speech, Dr. King states 'With this faith, we will be able to hew out of a mountain of despair, a stone of hope.' A figure of Martin Luther King, Jr. is carved into the 'Stone of Hope' standing past the 'Mountain of Despair.'"], ["photo_url", "mlk_memorial.jpg"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["site", "Navy-Merchant Marine Memorial"], ["address", 701], ["zip", 20004], ["description", "The Navy-Merchant Marine Memorial, featuring a large, evocative aluminum sculpture of a cresting wave and seagulls in flight, sits on Columbia Island on the Arlington side of the Potomac."], ["photo_url", "navy-merchant-marine-memorial.jpg"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "Iwo Jima Memorial"], ["address", 0], ["zip", 22209], ["photo_url", "iwo-jima.jpg"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "US Supreme Court"], ["address", 1], ["zip", 20543], ["photo_url", "us-supreme-court-building.jpg"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "Library of Congress"], ["address", 1], ["zip", 20543], ["photo_url", "loc.jpg"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["site", "National Arboretum"], ["address", 3501], ["zip", 20002], ["description", "The National Arboretum makes for a pleasant park, but its official mission is education and research. With 446 acres and 9.5 miles of meandering roads, it's laid out as a very large park with paddocks, forested areas, ponds, and groves, lots of groves."], ["photo_url", "national-arboretum.jpg"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["site", "Union Station"], ["address", 50], ["zip", 20002], ["description", "It's not just any old train station that can be the venue for a black-tie presidential inaugural ball. But the lavish Union Station, not far from the US Capitol Building, is one of the few that does. It's an impressive blend of form and function."], ["photo_url", "union-station.jpg"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["site", "Albert Einstein Memorial"], ["address", 2101], ["zip", 20418], ["description", "The Einstein Memorial, featuring a 21-foot, stylized bronze statue of physicist Albert Einstein, sits in a grove of holly and elm trees on the Constitution Avenue side of the grounds of the National Academy of Sciences.  The memorial was unveiled on April 22, 1979, to commemorate the centenary of Einstein's birth. In the granite base at Einstein's feet is a sky map of the universe with 2,700 stainless steel markers embedded into the marble to create a celestial map as it was on the day of the memorial's unveiling. In his left hand he holds papers summarizing three of his most important contributions to science, including his famous theory of general of relativity."], ["photo_url", "albert-einstein.jpg"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "National Gallery of Art"], ["address", 6], ["zip", 20565], ["photo_url", "nga.jpg"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "National Gallery East Wing"], ["address", 6], ["zip", 20565], ["photo_url", "ngi-east-wing.jpg"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "National Museum of Natural History"], ["address", 10], ["zip", 20560], ["photo_url", "natural-history.jpg"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "National Museum of American History"], ["address", 14], ["zip", 20001], ["photo_url", "american-history.jpg"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "National Academy of Sciences"], ["address", 2101], ["zip", 20418], ["photo_url", "nas-building.jpg"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "Freer Gallery of Art"], ["address", 1050], ["zip", 20560], ["photo_url", "freer.jpg"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "Sackler Gallery of Art"], ["address", 1050], ["zip", 20560], ["photo_url", "sackler.jpg"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "Arts & Industries Building"], ["address", 900], ["zip", 20560], ["photo_url", "arts-and-industries.jpg"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "Hirshhorn Museum"], ["address", 700], ["zip", 20560], ["photo_url", "hirshhorn.jpg"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["site", "Museum of African American History"], ["description", "The NMAAHC’s highly symbolic presence on the National Mall is matched by the symbolism of the building itself. Lead designer David Adjaye and lead architect Philip Freelon, together with their architectural team Freelon Adjaye Bond/SmithGroup, won the international competition in April 2009 to design and deliver the museum to the people of the United States. Groundbreaking on the five-acre site took place in February 2012, with the museum’s opening day scheduled for September 24, 2016. "], ["photo_url", "african-american-history.jpg"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "characters"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Bulbasaur"], ["kdex", "#001"], ["ndex", "#001"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ivysaur"], ["kdex", "#002"], ["ndex", "#002"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Venusaur"], ["kdex", "#003"], ["ndex", "#003"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Charmander"], ["kdex", "#004"], ["ndex", "#004"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Charmeleon"], ["kdex", "#005"], ["ndex", "#005"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Charizard"], ["kdex", "#006"], ["ndex", "#006"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Squirtle"], ["kdex", "#007"], ["ndex", "#007"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Wartortle"], ["kdex", "#008"], ["ndex", "#008"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Blastoise"], ["kdex", "#009"], ["ndex", "#009"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Caterpie"], ["kdex", "#010"], ["ndex", "#010"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Metapod"], ["kdex", "#011"], ["ndex", "#011"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Butterfree"], ["kdex", "#012"], ["ndex", "#012"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Weedle"], ["kdex", "#013"], ["ndex", "#013"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kakuna"], ["kdex", "#014"], ["ndex", "#014"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Beedrill"], ["kdex", "#015"], ["ndex", "#015"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Pidgey"], ["kdex", "#016"], ["ndex", "#016"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Pidgeotto"], ["kdex", "#017"], ["ndex", "#017"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Pidgeot"], ["kdex", "#018"], ["ndex", "#018"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Rattata"], ["kdex", "#019"], ["ndex", "#019"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Raticate"], ["kdex", "#020"], ["ndex", "#020"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Spearow"], ["kdex", "#021"], ["ndex", "#021"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Fearow"], ["kdex", "#022"], ["ndex", "#022"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ekans"], ["kdex", "#023"], ["ndex", "#023"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Arbok"], ["kdex", "#024"], ["ndex", "#024"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Pikachu"], ["kdex", "#025"], ["ndex", "#025"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Raichu"], ["kdex", "#026"], ["ndex", "#026"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Sandshrew"], ["kdex", "#027"], ["ndex", "#027"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Sandslash"], ["kdex", "#028"], ["ndex", "#028"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Nidoran_"], ["kdex", "#029"], ["ndex", "#029"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Nidorina"], ["kdex", "#030"], ["ndex", "#030"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Nidoqueen"], ["kdex", "#031"], ["ndex", "#031"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Nidoran_"], ["kdex", "#032"], ["ndex", "#032"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Nidorino"], ["kdex", "#033"], ["ndex", "#033"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Nidoking"], ["kdex", "#034"], ["ndex", "#034"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Clefairy"], ["kdex", "#035"], ["ndex", "#035"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Clefable"], ["kdex", "#036"], ["ndex", "#036"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Vulpix"], ["kdex", "#037"], ["ndex", "#037"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ninetales"], ["kdex", "#038"], ["ndex", "#038"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jigglypuff"], ["kdex", "#039"], ["ndex", "#039"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Wigglytuff"], ["kdex", "#040"], ["ndex", "#040"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Zubat"], ["kdex", "#041"], ["ndex", "#041"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Golbat"], ["kdex", "#042"], ["ndex", "#042"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Oddish"], ["kdex", "#043"], ["ndex", "#043"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gloom"], ["kdex", "#044"], ["ndex", "#044"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Vileplume"], ["kdex", "#045"], ["ndex", "#045"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Paras"], ["kdex", "#046"], ["ndex", "#046"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Parasect"], ["kdex", "#047"], ["ndex", "#047"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Venonat"], ["kdex", "#048"], ["ndex", "#048"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Venomoth"], ["kdex", "#049"], ["ndex", "#049"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Diglett"], ["kdex", "#050"], ["ndex", "#050"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dugtrio"], ["kdex", "#051"], ["ndex", "#051"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Meowth"], ["kdex", "#052"], ["ndex", "#052"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Persian"], ["kdex", "#053"], ["ndex", "#053"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Psyduck"], ["kdex", "#054"], ["ndex", "#054"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Golduck"], ["kdex", "#055"], ["ndex", "#055"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mankey"], ["kdex", "#056"], ["ndex", "#056"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Primeape"], ["kdex", "#057"], ["ndex", "#057"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Growlithe"], ["kdex", "#058"], ["ndex", "#058"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Arcanine"], ["kdex", "#059"], ["ndex", "#059"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Poliwag"], ["kdex", "#060"], ["ndex", "#060"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Poliwhirl"], ["kdex", "#061"], ["ndex", "#061"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Poliwrath"], ["kdex", "#062"], ["ndex", "#062"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Abra"], ["kdex", "#063"], ["ndex", "#063"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kadabra"], ["kdex", "#064"], ["ndex", "#064"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Alakazam"], ["kdex", "#065"], ["ndex", "#065"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Machop"], ["kdex", "#066"], ["ndex", "#066"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Machoke"], ["kdex", "#067"], ["ndex", "#067"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Machamp"], ["kdex", "#068"], ["ndex", "#068"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Bellsprout"], ["kdex", "#069"], ["ndex", "#069"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Weepinbell"], ["kdex", "#070"], ["ndex", "#070"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Victreebel"], ["kdex", "#071"], ["ndex", "#071"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Tentacool"], ["kdex", "#072"], ["ndex", "#072"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Tentacruel"], ["kdex", "#073"], ["ndex", "#073"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Geodude"], ["kdex", "#074"], ["ndex", "#074"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Graveler"], ["kdex", "#075"], ["ndex", "#075"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Golem"], ["kdex", "#076"], ["ndex", "#076"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ponyta"], ["kdex", "#077"], ["ndex", "#077"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Rapidash"], ["kdex", "#078"], ["ndex", "#078"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Slowpoke"], ["kdex", "#079"], ["ndex", "#079"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Slowbro"], ["kdex", "#080"], ["ndex", "#080"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Magnemite"], ["kdex", "#081"], ["ndex", "#081"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Magneton"], ["kdex", "#082"], ["ndex", "#082"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Farfetch'd"], ["kdex", "#083"], ["ndex", "#083"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Doduo"], ["kdex", "#084"], ["ndex", "#084"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dodrio"], ["kdex", "#085"], ["ndex", "#085"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Seel"], ["kdex", "#086"], ["ndex", "#086"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dewgong"], ["kdex", "#087"], ["ndex", "#087"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Grimer"], ["kdex", "#088"], ["ndex", "#088"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Muk"], ["kdex", "#089"], ["ndex", "#089"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Shellder"], ["kdex", "#090"], ["ndex", "#090"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cloyster"], ["kdex", "#091"], ["ndex", "#091"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gastly"], ["kdex", "#092"], ["ndex", "#092"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Haunter"], ["kdex", "#093"], ["ndex", "#093"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gengar"], ["kdex", "#094"], ["ndex", "#094"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Onix"], ["kdex", "#095"], ["ndex", "#095"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Drowzee"], ["kdex", "#096"], ["ndex", "#096"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Hypno"], ["kdex", "#097"], ["ndex", "#097"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Krabby"], ["kdex", "#098"], ["ndex", "#098"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kingler"], ["kdex", "#099"], ["ndex", "#099"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Voltorb"], ["kdex", "#100"], ["ndex", "#100"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Electrode"], ["kdex", "#101"], ["ndex", "#101"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Exeggcute"], ["kdex", "#102"], ["ndex", "#102"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Exeggutor"], ["kdex", "#103"], ["ndex", "#103"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cubone"], ["kdex", "#104"], ["ndex", "#104"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Marowak"], ["kdex", "#105"], ["ndex", "#105"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Hitmonlee"], ["kdex", "#106"], ["ndex", "#106"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Hitmonchan"], ["kdex", "#107"], ["ndex", "#107"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Lickitung"], ["kdex", "#108"], ["ndex", "#108"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Koffing"], ["kdex", "#109"], ["ndex", "#109"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Weezing"], ["kdex", "#110"], ["ndex", "#110"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Rhyhorn"], ["kdex", "#111"], ["ndex", "#111"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Rhydon"], ["kdex", "#112"], ["ndex", "#112"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Chansey"], ["kdex", "#113"], ["ndex", "#113"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Tangela"], ["kdex", "#114"], ["ndex", "#114"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kangaskhan"], ["kdex", "#115"], ["ndex", "#115"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Horsea"], ["kdex", "#116"], ["ndex", "#116"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Seadra"], ["kdex", "#117"], ["ndex", "#117"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Goldeen"], ["kdex", "#118"], ["ndex", "#118"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Seaking"], ["kdex", "#119"], ["ndex", "#119"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Staryu"], ["kdex", "#120"], ["ndex", "#120"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Starmie"], ["kdex", "#121"], ["ndex", "#121"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mr. Mime"], ["kdex", "#122"], ["ndex", "#122"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Scyther"], ["kdex", "#123"], ["ndex", "#123"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jynx"], ["kdex", "#124"], ["ndex", "#124"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Electabuzz"], ["kdex", "#125"], ["ndex", "#125"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Magmar"], ["kdex", "#126"], ["ndex", "#126"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Pinsir"], ["kdex", "#127"], ["ndex", "#127"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Tauros"], ["kdex", "#128"], ["ndex", "#128"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Magikarp"], ["kdex", "#129"], ["ndex", "#129"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gyarados"], ["kdex", "#130"], ["ndex", "#130"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Lapras"], ["kdex", "#131"], ["ndex", "#131"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ditto"], ["kdex", "#132"], ["ndex", "#132"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Eevee"], ["kdex", "#133"], ["ndex", "#133"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Vaporeon"], ["kdex", "#134"], ["ndex", "#134"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jolteon"], ["kdex", "#135"], ["ndex", "#135"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Flareon"], ["kdex", "#136"], ["ndex", "#136"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Porygon"], ["kdex", "#137"], ["ndex", "#137"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Omanyte"], ["kdex", "#138"], ["ndex", "#138"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Omastar"], ["kdex", "#139"], ["ndex", "#139"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kabuto"], ["kdex", "#140"], ["ndex", "#140"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kabutops"], ["kdex", "#141"], ["ndex", "#141"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Aerodactyl"], ["kdex", "#142"], ["ndex", "#142"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Snorlax"], ["kdex", "#143"], ["ndex", "#143"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Articuno"], ["kdex", "#144"], ["ndex", "#144"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Zapdos"], ["kdex", "#145"], ["ndex", "#145"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Moltres"], ["kdex", "#146"], ["ndex", "#146"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dratini"], ["kdex", "#147"], ["ndex", "#147"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dragonair"], ["kdex", "#148"], ["ndex", "#148"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dragonite"], ["kdex", "#149"], ["ndex", "#149"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mewtwo"], ["kdex", "#150"], ["ndex", "#150"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mew"], ["kdex", "#151"], ["ndex", "#151"], ["created_at", 2016-07-19 13:03:38 UTC], ["updated_at", 2016-07-19 13:03:38 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2016-07-19 09:04:00 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for ::1 at 2016-07-19 09:04:00 -0400
+Processing by MonumentsController#index as HTML
+Processing by MonumentsController#index as HTML
+  Rendering monuments/index.html.erb within layouts/application
+  Rendering monuments/index.html.erb within layouts/application
+  [1m[36mMonument Load (1.2ms)[0m  [1m[34mSELECT "monuments".* FROM "monuments"[0m
+  [1m[36mMonument Load (0.9ms)[0m  [1m[34mSELECT "monuments".* FROM "monuments"[0m
+  Rendered monuments/index.html.erb within layouts/application (25.5ms)
+  Rendered monuments/index.html.erb within layouts/application (36.6ms)
+Completed 200 OK in 875ms (Views: 852.4ms | ActiveRecord: 14.2ms)
+
+
+Completed 200 OK in 889ms (Views: 866.3ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/" for ::1 at 2016-07-19 09:04:11 -0400
+Processing by MonumentsController#index as HTML
+  Rendering monuments/index.html.erb within layouts/application
+  [1m[36mMonument Load (0.4ms)[0m  [1m[34mSELECT "monuments".* FROM "monuments"[0m
+  Rendered monuments/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 32ms (Views: 29.3ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4900479451371593985);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4900479451371593985)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'characters'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'encounters'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'monuments'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4900479451371593985);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4900479451371593985)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'characters'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'encounters'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'monuments'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[31mDELETE FROM "monuments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["site", "Arlington National Cemetery"], ["address", 0], ["zip", 22211], ["description", "Arlington National Cemetery occupies 612 acres in Virginia on the Potomac River, directly opposite Washington. In 1864, Arlington became a military cemetery. More than 240,000 service members and their dependents are buried there. In 1921, an Unknown American Soldier of World War I was buried in the cemetery. The monument at the Tomb of the Unknown Soldier was opened to the public in 1932. Two additional Unknowns, one from World War II and one from the Korean War, were buried there on May 30, 1958. The Unknown Serviceman of Vietnam was buried on May 28, 1984. In June 1998 he was identified as First Lt. Michael Blassie, an Air Force pilot from St. Louis. The inscription carved on the Tomb of the Unknowns reads: HERE RESTS IN HONORED GLORY AN AMERICAN SOLDIER KNOWN BUT TO GOD"], ["photo_url", "arlington_national_cemetery.png"], ["created_at", 2016-07-19 13:11:44 UTC], ["updated_at", 2016-07-19 13:11:44 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["site", "Capitol Building"], ["address", 0], ["zip", 20004], ["description", "This is where Congress meets and conducts business. It is located on the east end of the Mall. Construction of the building started in 1792, and its design was modified several times, until it was finished in 1865. The Capitol's most recognizable feature is the 180-foot-high cast iron dome of the Great Rotunda. In addition to its historical association, the Capitol Building is also a vast artistic treasure house. The works of such famous artists as Gilbert Stuart, Rembrandt Peale and John Trumbull are displayed on the walls. The Great Rotunda is decorated with a massive fresco by Constantino Brumidi. A monorail subway joins the House and Senate wings of the Capitol with the Congressional office buildings."], ["photo_url", "capitol_building.jpg"], ["created_at", 2016-07-19 13:11:44 UTC], ["updated_at", 2016-07-19 13:11:44 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["site", "Jefferson Memorial"], ["address", 701], ["zip", 20242], ["description", "In 1934, Congress authorized the construction of a memorial to honor Thomas Jefferson, the third President of the United States. He is considered the political philosopher of the American Revolution. He also drafted the Declaration of Independence. Architect John Russell Pope, who designed the memorial, used some of Jefferson's own architectural preferences in his design. The memorial, like Jefferson's home in Monticello, is based on the Roman Pantheon. Construction of the circular marble building was finished in 1943. It is located near the Potomac River and overlooks the Tidal Basin, which is surrounded by Japanese flowering cherry trees."], ["photo_url", "jefferson_memorial.png"], ["created_at", 2016-07-19 13:11:44 UTC], ["updated_at", 2016-07-19 13:11:44 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["site", "Lincoln Memorial"], ["address", 2], ["zip", 20037], ["description", "Construction of this memorial to the 16th President of the United States started in 1914 and was completed in 1922. It is located on the west end of the Mall. Architect Henry Bacon modeled the marble, granite and limestone building after the Greek Parthenon. The inside of the memorial is divided into three chambers: central, north and south. A white marble statue of President Lincoln sits in the central chamber. The Gettysburg Address, which Lincoln gave on November 19, 1863, at Gettysburg, Pennsylvania , is in the south chamber, and his second inaugural speech is in the north chamber. The 36 Doric columns on the outside of the memorial represent the number of states in the Union at the time of Lincoln's death in 1865."], ["photo_url", "lincoln-memorial.jpg"], ["created_at", 2016-07-19 13:11:44 UTC], ["updated_at", 2016-07-19 13:11:44 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["site", "National Archives"], ["address", 700], ["zip", 20560], ["description", "The National Archives is the official library where the records of the three branches of the U.S. government are kept and preserved. The Declaration of Independence, the Constitution and the Bill of Rights are on display here. A collection of pictures taken during the Civil War by the famous photographer Matthew Brady are also on display. The building is located on Constitution Avenue in Washington, D.C. The agency was created in 1934 and the building was completed in 1935."], ["photo_url", "national_archives.jpg"], ["created_at", 2016-07-19 13:11:44 UTC], ["updated_at", 2016-07-19 13:11:44 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["site", "Smithsonian Castle"], ["address", 1000], ["zip", 20560], ["description", "A rich English researcher, James Smithson, left all his money to create a museum in Washington, D.C. to 'the increase and diffusion of knowledge.' And he never even visited the United States! He also left his scientific library and his collection of minerals for the new museum. The Smithsonian is not just one building. It is a network of museums and art galleries, research projects and special performances. It includes 14 museums. Some of them are the National Air and Space Museum, the Museum of Natural History and the National Portrait Gallery."], ["photo_url", "smithsonian-castle.jpg"], ["created_at", 2016-07-19 13:11:44 UTC], ["updated_at", 2016-07-19 13:11:44 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["site", "Washington Monument"], ["description", "Construction of this magnificent Washington, D.C., monument took nearly a century of planning, building and controversy. The first plans, which were dropped, called for a large equestrian statue of George Washington. After Washington's death in 1797, a memorial was discussed, only to be delayed again. Finally, in 1848, work started on the monument that stands today. After more fits and starts, the monument was finished in 1884 and opened to the public in 1888. The tapered shaft, or obelisk, is made of stone and is covered with white marble. The monument stands just over 555 feet. Memorial stones from the 50 States, foreign countries and organizations line the inside walls. The top of the monument, which you can get to only by elevator, provides a panoramic view of the city."], ["photo_url", "washington_monument.png"], ["created_at", 2016-07-19 13:11:44 UTC], ["updated_at", 2016-07-19 13:11:44 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["site", "White House"], ["address", 1600], ["zip", 20500], ["description", "The 132-room White House is the official residence of the president. It is located at 1600 Pennsylvania Avenue. President George Washington chose the site in 1792 and supervised construction. The architect was James Hoban. The mansion was not finished until 1800, so Washington is the only president who never lived in the White House. The British burned the building in 1814, during the War of 1812. The rooms for public functions are on the first floor. The second and third floors are used as the residence of the president and first family. The most celebrated public room is the East Room, where formal receptions take place. Other public rooms are the Red Room, the Green Room and the Blue Room. The State Dining Room is used for formal dinners."], ["photo_url", "white-house.png"], ["created_at", 2016-07-19 13:11:44 UTC], ["updated_at", 2016-07-19 13:11:44 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "National Zoo"], ["address", 3001], ["zip", 20008], ["photo_url", "national-zoo.jpg"], ["created_at", 2016-07-19 13:11:44 UTC], ["updated_at", 2016-07-19 13:11:44 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "Air & Space Museum"], ["address", 600], ["zip", 20560], ["photo_url", "air-and-space.jpg"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "Museum of the American Indian"], ["address", 4], ["zip", 20560], ["photo_url", "american-indian.jpg"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "Natural History Museum"], ["address", 10], ["zip", 20560], ["photo_url", "natural-history.jpg"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "Constitution Gardens"], ["address", 1850], ["zip", 20560], ["photo_url", "constition-gardens.jpg"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["site", "Franklin Delano Roosevelt Memorial"], ["address", 1850], ["zip", 20242], ["description", "The Franklin Delano Roosevelt Memorial is a testament to one of America's most beloved presidents. In honor of President Roosevelt's four terms in office, the monument is divided into four outdoor 'rooms,' where visitors are able to view myriad statues and murals representing issues from the Great Depression to World War II. When visiting the memorial, visitors have the opportunity to learn about and reflect on some of the most significant events in this country's history, while enjoying some of the best views of the Tidal Basin and iconic cherry blossom trees that surround it."], ["photo_url", "fdr-memorial-2.jpg"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["site", "Martin Luther King, Jr. Memorial"], ["address", 1964], ["zip", 20024], ["description", "Dedicated in 2011, the Martin Luther King, Jr. Memorial exemplifies the fundamental values of Dr. King during his quest for equal rights for all citizens.  Inspired by Dr. King's 'I Have a Dream' speech, Dr. King states 'With this faith, we will be able to hew out of a mountain of despair, a stone of hope.' A figure of Martin Luther King, Jr. is carved into the 'Stone of Hope' standing past the 'Mountain of Despair.'"], ["photo_url", "mlk_memorial.jpg"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["site", "Navy-Merchant Marine Memorial"], ["address", 701], ["zip", 20004], ["description", "The Navy-Merchant Marine Memorial, featuring a large, evocative aluminum sculpture of a cresting wave and seagulls in flight, sits on Columbia Island on the Arlington side of the Potomac."], ["photo_url", "navy-merchant-marine-memorial.jpg"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "Iwo Jima Memorial"], ["address", 0], ["zip", 22209], ["photo_url", "iwo-jima.jpg"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "US Supreme Court"], ["address", 1], ["zip", 20543], ["photo_url", "us-supreme-court-building.jpg"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "Library of Congress"], ["address", 1], ["zip", 20543], ["photo_url", "loc.jpg"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["site", "National Arboretum"], ["address", 3501], ["zip", 20002], ["description", "The National Arboretum makes for a pleasant park, but its official mission is education and research. With 446 acres and 9.5 miles of meandering roads, it's laid out as a very large park with paddocks, forested areas, ponds, and groves, lots of groves."], ["photo_url", "national-arboretum.jpg"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["site", "Union Station"], ["address", 50], ["zip", 20002], ["description", "It's not just any old train station that can be the venue for a black-tie presidential inaugural ball. But the lavish Union Station, not far from the US Capitol Building, is one of the few that does. It's an impressive blend of form and function."], ["photo_url", "union-station.jpg"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["site", "Albert Einstein Memorial"], ["address", 2101], ["zip", 20418], ["description", "The Einstein Memorial, featuring a 21-foot, stylized bronze statue of physicist Albert Einstein, sits in a grove of holly and elm trees on the Constitution Avenue side of the grounds of the National Academy of Sciences.  The memorial was unveiled on April 22, 1979, to commemorate the centenary of Einstein's birth. In the granite base at Einstein's feet is a sky map of the universe with 2,700 stainless steel markers embedded into the marble to create a celestial map as it was on the day of the memorial's unveiling. In his left hand he holds papers summarizing three of his most important contributions to science, including his famous theory of general of relativity."], ["photo_url", "albert-einstein.jpg"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "National Gallery of Art"], ["address", 6], ["zip", 20565], ["photo_url", "nga.jpg"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "National Gallery East Wing"], ["address", 6], ["zip", 20565], ["photo_url", "ngi-east-wing.jpg"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "National Museum of Natural History"], ["address", 10], ["zip", 20560], ["photo_url", "natural-history.jpg"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "National Museum of American History"], ["address", 14], ["zip", 20001], ["photo_url", "american-history.jpg"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "National Academy of Sciences"], ["address", 2101], ["zip", 20418], ["photo_url", "nas-building.jpg"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "Freer Gallery of Art"], ["address", 1050], ["zip", 20560], ["photo_url", "freer.jpg"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "Sackler Gallery of Art"], ["address", 1050], ["zip", 20560], ["photo_url", "sackler.jpg"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "Arts & Industries Building"], ["address", 900], ["zip", 20560], ["photo_url", "arts-and-industries.jpg"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "address", "zip", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["site", "Hirshhorn Museum"], ["address", 700], ["zip", 20560], ["photo_url", "hirshhorn.jpg"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "monuments" ("site", "description", "photo_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["site", "Museum of African American History"], ["description", "The NMAAHC’s highly symbolic presence on the National Mall is matched by the symbolism of the building itself. Lead designer David Adjaye and lead architect Philip Freelon, together with their architectural team Freelon Adjaye Bond/SmithGroup, won the international competition in April 2009 to design and deliver the museum to the people of the United States. Groundbreaking on the five-acre site took place in February 2012, with the museum’s opening day scheduled for September 24, 2016. "], ["photo_url", "african-american-history.jpg"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "characters"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Bulbasaur"], ["kdex", "#001"], ["ndex", "#001"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ivysaur"], ["kdex", "#002"], ["ndex", "#002"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Venusaur"], ["kdex", "#003"], ["ndex", "#003"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Charmander"], ["kdex", "#004"], ["ndex", "#004"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Charmeleon"], ["kdex", "#005"], ["ndex", "#005"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Charizard"], ["kdex", "#006"], ["ndex", "#006"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Squirtle"], ["kdex", "#007"], ["ndex", "#007"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Wartortle"], ["kdex", "#008"], ["ndex", "#008"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Blastoise"], ["kdex", "#009"], ["ndex", "#009"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Caterpie"], ["kdex", "#010"], ["ndex", "#010"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Metapod"], ["kdex", "#011"], ["ndex", "#011"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Butterfree"], ["kdex", "#012"], ["ndex", "#012"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Weedle"], ["kdex", "#013"], ["ndex", "#013"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kakuna"], ["kdex", "#014"], ["ndex", "#014"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Beedrill"], ["kdex", "#015"], ["ndex", "#015"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Pidgey"], ["kdex", "#016"], ["ndex", "#016"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Pidgeotto"], ["kdex", "#017"], ["ndex", "#017"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Pidgeot"], ["kdex", "#018"], ["ndex", "#018"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Rattata"], ["kdex", "#019"], ["ndex", "#019"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Raticate"], ["kdex", "#020"], ["ndex", "#020"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Spearow"], ["kdex", "#021"], ["ndex", "#021"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Fearow"], ["kdex", "#022"], ["ndex", "#022"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ekans"], ["kdex", "#023"], ["ndex", "#023"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Arbok"], ["kdex", "#024"], ["ndex", "#024"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Pikachu"], ["kdex", "#025"], ["ndex", "#025"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Raichu"], ["kdex", "#026"], ["ndex", "#026"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Sandshrew"], ["kdex", "#027"], ["ndex", "#027"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Sandslash"], ["kdex", "#028"], ["ndex", "#028"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Nidoran_"], ["kdex", "#029"], ["ndex", "#029"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Nidorina"], ["kdex", "#030"], ["ndex", "#030"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Nidoqueen"], ["kdex", "#031"], ["ndex", "#031"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Nidoran_"], ["kdex", "#032"], ["ndex", "#032"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Nidorino"], ["kdex", "#033"], ["ndex", "#033"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Nidoking"], ["kdex", "#034"], ["ndex", "#034"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Clefairy"], ["kdex", "#035"], ["ndex", "#035"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Clefable"], ["kdex", "#036"], ["ndex", "#036"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Vulpix"], ["kdex", "#037"], ["ndex", "#037"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ninetales"], ["kdex", "#038"], ["ndex", "#038"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jigglypuff"], ["kdex", "#039"], ["ndex", "#039"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Wigglytuff"], ["kdex", "#040"], ["ndex", "#040"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Zubat"], ["kdex", "#041"], ["ndex", "#041"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Golbat"], ["kdex", "#042"], ["ndex", "#042"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Oddish"], ["kdex", "#043"], ["ndex", "#043"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gloom"], ["kdex", "#044"], ["ndex", "#044"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Vileplume"], ["kdex", "#045"], ["ndex", "#045"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Paras"], ["kdex", "#046"], ["ndex", "#046"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Parasect"], ["kdex", "#047"], ["ndex", "#047"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Venonat"], ["kdex", "#048"], ["ndex", "#048"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Venomoth"], ["kdex", "#049"], ["ndex", "#049"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Diglett"], ["kdex", "#050"], ["ndex", "#050"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dugtrio"], ["kdex", "#051"], ["ndex", "#051"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Meowth"], ["kdex", "#052"], ["ndex", "#052"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Persian"], ["kdex", "#053"], ["ndex", "#053"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Psyduck"], ["kdex", "#054"], ["ndex", "#054"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Golduck"], ["kdex", "#055"], ["ndex", "#055"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mankey"], ["kdex", "#056"], ["ndex", "#056"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Primeape"], ["kdex", "#057"], ["ndex", "#057"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Growlithe"], ["kdex", "#058"], ["ndex", "#058"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Arcanine"], ["kdex", "#059"], ["ndex", "#059"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Poliwag"], ["kdex", "#060"], ["ndex", "#060"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Poliwhirl"], ["kdex", "#061"], ["ndex", "#061"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Poliwrath"], ["kdex", "#062"], ["ndex", "#062"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Abra"], ["kdex", "#063"], ["ndex", "#063"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kadabra"], ["kdex", "#064"], ["ndex", "#064"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Alakazam"], ["kdex", "#065"], ["ndex", "#065"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Machop"], ["kdex", "#066"], ["ndex", "#066"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Machoke"], ["kdex", "#067"], ["ndex", "#067"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Machamp"], ["kdex", "#068"], ["ndex", "#068"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Bellsprout"], ["kdex", "#069"], ["ndex", "#069"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Weepinbell"], ["kdex", "#070"], ["ndex", "#070"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Victreebel"], ["kdex", "#071"], ["ndex", "#071"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Tentacool"], ["kdex", "#072"], ["ndex", "#072"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Tentacruel"], ["kdex", "#073"], ["ndex", "#073"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Geodude"], ["kdex", "#074"], ["ndex", "#074"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Graveler"], ["kdex", "#075"], ["ndex", "#075"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Golem"], ["kdex", "#076"], ["ndex", "#076"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ponyta"], ["kdex", "#077"], ["ndex", "#077"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Rapidash"], ["kdex", "#078"], ["ndex", "#078"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Slowpoke"], ["kdex", "#079"], ["ndex", "#079"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Slowbro"], ["kdex", "#080"], ["ndex", "#080"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Magnemite"], ["kdex", "#081"], ["ndex", "#081"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Magneton"], ["kdex", "#082"], ["ndex", "#082"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Farfetch'd"], ["kdex", "#083"], ["ndex", "#083"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Doduo"], ["kdex", "#084"], ["ndex", "#084"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dodrio"], ["kdex", "#085"], ["ndex", "#085"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Seel"], ["kdex", "#086"], ["ndex", "#086"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dewgong"], ["kdex", "#087"], ["ndex", "#087"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Grimer"], ["kdex", "#088"], ["ndex", "#088"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Muk"], ["kdex", "#089"], ["ndex", "#089"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Shellder"], ["kdex", "#090"], ["ndex", "#090"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cloyster"], ["kdex", "#091"], ["ndex", "#091"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gastly"], ["kdex", "#092"], ["ndex", "#092"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Haunter"], ["kdex", "#093"], ["ndex", "#093"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gengar"], ["kdex", "#094"], ["ndex", "#094"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Onix"], ["kdex", "#095"], ["ndex", "#095"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Drowzee"], ["kdex", "#096"], ["ndex", "#096"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Hypno"], ["kdex", "#097"], ["ndex", "#097"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Krabby"], ["kdex", "#098"], ["ndex", "#098"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kingler"], ["kdex", "#099"], ["ndex", "#099"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Voltorb"], ["kdex", "#100"], ["ndex", "#100"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Electrode"], ["kdex", "#101"], ["ndex", "#101"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Exeggcute"], ["kdex", "#102"], ["ndex", "#102"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Exeggutor"], ["kdex", "#103"], ["ndex", "#103"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cubone"], ["kdex", "#104"], ["ndex", "#104"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Marowak"], ["kdex", "#105"], ["ndex", "#105"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Hitmonlee"], ["kdex", "#106"], ["ndex", "#106"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Hitmonchan"], ["kdex", "#107"], ["ndex", "#107"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Lickitung"], ["kdex", "#108"], ["ndex", "#108"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Koffing"], ["kdex", "#109"], ["ndex", "#109"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Weezing"], ["kdex", "#110"], ["ndex", "#110"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Rhyhorn"], ["kdex", "#111"], ["ndex", "#111"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Rhydon"], ["kdex", "#112"], ["ndex", "#112"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Chansey"], ["kdex", "#113"], ["ndex", "#113"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Tangela"], ["kdex", "#114"], ["ndex", "#114"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kangaskhan"], ["kdex", "#115"], ["ndex", "#115"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Horsea"], ["kdex", "#116"], ["ndex", "#116"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Seadra"], ["kdex", "#117"], ["ndex", "#117"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Goldeen"], ["kdex", "#118"], ["ndex", "#118"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Seaking"], ["kdex", "#119"], ["ndex", "#119"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Staryu"], ["kdex", "#120"], ["ndex", "#120"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Starmie"], ["kdex", "#121"], ["ndex", "#121"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mr. Mime"], ["kdex", "#122"], ["ndex", "#122"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Scyther"], ["kdex", "#123"], ["ndex", "#123"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jynx"], ["kdex", "#124"], ["ndex", "#124"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Electabuzz"], ["kdex", "#125"], ["ndex", "#125"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Magmar"], ["kdex", "#126"], ["ndex", "#126"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Pinsir"], ["kdex", "#127"], ["ndex", "#127"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Tauros"], ["kdex", "#128"], ["ndex", "#128"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Magikarp"], ["kdex", "#129"], ["ndex", "#129"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gyarados"], ["kdex", "#130"], ["ndex", "#130"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Lapras"], ["kdex", "#131"], ["ndex", "#131"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ditto"], ["kdex", "#132"], ["ndex", "#132"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Eevee"], ["kdex", "#133"], ["ndex", "#133"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Vaporeon"], ["kdex", "#134"], ["ndex", "#134"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jolteon"], ["kdex", "#135"], ["ndex", "#135"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Flareon"], ["kdex", "#136"], ["ndex", "#136"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Porygon"], ["kdex", "#137"], ["ndex", "#137"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Omanyte"], ["kdex", "#138"], ["ndex", "#138"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Omastar"], ["kdex", "#139"], ["ndex", "#139"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kabuto"], ["kdex", "#140"], ["ndex", "#140"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kabutops"], ["kdex", "#141"], ["ndex", "#141"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Aerodactyl"], ["kdex", "#142"], ["ndex", "#142"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Snorlax"], ["kdex", "#143"], ["ndex", "#143"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Articuno"], ["kdex", "#144"], ["ndex", "#144"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Zapdos"], ["kdex", "#145"], ["ndex", "#145"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Moltres"], ["kdex", "#146"], ["ndex", "#146"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dratini"], ["kdex", "#147"], ["ndex", "#147"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dragonair"], ["kdex", "#148"], ["ndex", "#148"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dragonite"], ["kdex", "#149"], ["ndex", "#149"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mewtwo"], ["kdex", "#150"], ["ndex", "#150"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "kdex", "ndex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mew"], ["kdex", "#151"], ["ndex", "#151"], ["created_at", 2016-07-19 13:11:45 UTC], ["updated_at", 2016-07-19 13:11:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4900479451371593985);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4900479451371593985)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'characters'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'encounters'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'monuments'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+Started GET "/" for ::1 at 2016-07-19 09:15:31 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MonumentsController#index as HTML
+  Rendering monuments/index.html.erb within layouts/application
+  [1m[36mMonument Load (3.0ms)[0m  [1m[34mSELECT "monuments".* FROM "monuments"[0m
+  Rendered monuments/index.html.erb within layouts/application (27.2ms)
+Completed 200 OK in 338ms (Views: 318.7ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/monuments/81" for ::1 at 2016-07-19 09:15:35 -0400
+Processing by MonumentsController#show as HTML
+  Parameters: {"id"=>"81"}
+  [1m[36mMonument Load (0.6ms)[0m  [1m[34mSELECT  "monuments".* FROM "monuments" WHERE "monuments"."id" = $1 LIMIT $2[0m  [["id", 81], ["LIMIT", 1]]
+  Rendering monuments/show.html.erb within layouts/application
+  Rendered monuments/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 42ms (Views: 28.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/monuments/81/edit" for ::1 at 2016-07-19 09:15:37 -0400
+Processing by MonumentsController#edit as HTML
+  Parameters: {"id"=>"81"}
+  [1m[36mMonument Load (0.4ms)[0m  [1m[34mSELECT  "monuments".* FROM "monuments" WHERE "monuments"."id" = $1 LIMIT $2[0m  [["id", 81], ["LIMIT", 1]]
+  Rendering monuments/edit.html.erb within layouts/application
+  Rendered monuments/_form.html.erb (22.9ms)
+  Rendered monuments/edit.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 57ms (Views: 53.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/monuments" for ::1 at 2016-07-19 09:15:38 -0400
+Processing by MonumentsController#index as HTML
+  Rendering monuments/index.html.erb within layouts/application
+  [1m[36mMonument Load (0.7ms)[0m  [1m[34mSELECT "monuments".* FROM "monuments"[0m
+  Rendered monuments/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 66ms (Views: 63.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/monuments.json" for ::1 at 2016-07-19 09:16:08 -0400
+Processing by MonumentsController#index as JSON
+  Rendering monuments/index.json.jbuilder
+  [1m[36mMonument Load (0.4ms)[0m  [1m[34mSELECT "monuments".* FROM "monuments"[0m
+  Rendered monuments/index.json.jbuilder (10.4ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `site_id' for #<Monument:0x007fae380cce78>
+Did you mean?  site):
+    1: json.array!(@monuments) do |monument|
+    2:   json.extract! monument, :id, :site, :site_id, :address, :zip, :description, :photo_url
+    3:   json.url monument_url(monument, format: :json)
+    4: end
+  
+app/views/monuments/index.json.jbuilder:2:in `block in _app_views_monuments_index_json_jbuilder__3208925021378522704_70193120798420'
+app/views/monuments/index.json.jbuilder:1:in `_app_views_monuments_index_json_jbuilder__3208925021378522704_70193120798420'
+  Rendering /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.8ms)
+  Rendering /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (64.2ms)
+Started GET "/monuments" for ::1 at 2016-07-19 14:47:59 -0400
+  
+SyntaxError (/Users/rebekahmilford/wdi/projects/WDI10-Project-3/WDI10-Project-3/pokemonument-api/app/controllers/monuments_controller.rb:65: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/monuments_controller.rb:65: syntax error, unexpected keyword_end, expecting end-of-input
+  Rendering /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.7ms)
+  Rendering /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (60.9ms)
+Started GET "/" for ::1 at 2016-07-19 14:56:59 -0400
+  
+SyntaxError (/Users/rebekahmilford/wdi/projects/WDI10-Project-3/WDI10-Project-3/pokemonument-api/app/controllers/monuments_controller.rb:65: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/monuments_controller.rb:65: syntax error, unexpected keyword_end, expecting end-of-input
+  Rendering /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
+  Rendering /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.5ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4900479451371593985);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4900479451371593985)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'characters'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'encounters'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'monuments'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+Started GET "/" for ::1 at 2016-07-19 15:38:52 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+SyntaxError (/Users/rebekahmilford/wdi/projects/WDI10-Project-3/WDI10-Project-3/pokemonument-api/app/controllers/monuments_controller.rb:65: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/monuments_controller.rb:65: syntax error, unexpected keyword_end, expecting end-of-input
+  Rendering /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.3ms)
+  Rendering /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (15.7ms)
+  Rendered /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (124.0ms)
+Started GET "/" for ::1 at 2016-07-19 15:38:52 -0400
+  
+SyntaxError (/Users/rebekahmilford/wdi/projects/WDI10-Project-3/WDI10-Project-3/pokemonument-api/app/controllers/monuments_controller.rb:65: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/monuments_controller.rb:65: syntax error, unexpected keyword_end, expecting end-of-input
+  Rendering /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.8ms)
+Started GET "/monuments.json" for ::1 at 2016-07-19 15:39:11 -0400
+  
+SyntaxError (/Users/rebekahmilford/wdi/projects/WDI10-Project-3/WDI10-Project-3/pokemonument-api/app/controllers/monuments_controller.rb:65: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/monuments_controller.rb:65: syntax error, unexpected keyword_end, expecting end-of-input
+  Rendering /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.3ms)
+  Rendering /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/rebekahmilford/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (50.9ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4900479451371593985);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4900479451371593985)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'characters'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'encounters'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'monuments'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m

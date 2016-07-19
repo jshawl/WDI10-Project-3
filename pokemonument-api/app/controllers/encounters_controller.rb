@@ -5,20 +5,24 @@ class EncountersController < ApplicationController
   # GET /encounters.json
   def index
     @encounters = Encounter.all
+    render json: @encounters
   end
 
   # GET /encounters/1
   # GET /encounters/1.json
   def show
+    render json: @encounter
   end
 
   # GET /encounters/new
   def new
     @encounter = Encounter.new
+    render json: @encounter
   end
 
-  # GET /encounters/1/edit
+  # # GET /encounters/1/edit
   def edit
+    render json: @encounter
   end
 
   # POST /encounters
@@ -26,39 +30,27 @@ class EncountersController < ApplicationController
   def create
     @encounter = Encounter.new(encounter_params)
 
-    respond_to do |format|
-      if @encounter.save
-        format.html { redirect_to @encounter, notice: 'Encounter was successfully created.' }
-        format.json { render :show, status: :created, location: @encounter }
-      else
-        format.html { render :new }
-        format.json { render json: @encounter.errors, status: :unprocessable_entity }
-      end
-    end
+        if @encounter.save
+          render json: @encounter, status: :created, location: @encounter
+        else
+          render json: @encounter.errors, status: :unprocessable_entity
+        end
   end
 
   # PATCH/PUT /encounters/1
   # PATCH/PUT /encounters/1.json
   def update
-    respond_to do |format|
-      if @encounter.update(encounter_params)
-        format.html { redirect_to @encounter, notice: 'Encounter was successfully updated.' }
-        format.json { render :show, status: :ok, location: @encounter }
-      else
-        format.html { render :edit }
-        format.json { render json: @encounter.errors, status: :unprocessable_entity }
-      end
-    end
+    if @encounter.update(bleet_params)
+         render json: @encounter
+       else
+         render json: @encounter.errors, status: :unprocessable_entity
+       end
   end
 
   # DELETE /encounters/1
   # DELETE /encounters/1.json
   def destroy
     @encounter.destroy
-    respond_to do |format|
-      format.html { redirect_to encounters_url, notice: 'Encounter was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
 
   private
