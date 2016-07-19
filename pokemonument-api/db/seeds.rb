@@ -14,7 +14,7 @@ Monument.delete_all
 CSV.foreach('db/monuments.csv', headers: true) do |row|
   Monument.create(
     {
-      site: row['site'],
+      name: row['name'],
       address: row['address'],
       zip: row['zip'],
       description: row['description'],
