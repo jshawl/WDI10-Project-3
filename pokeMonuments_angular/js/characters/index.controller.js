@@ -2,7 +2,7 @@
 
 (function(){
   angular
-  .module("characters"[])
+  .module("characters",[])
   .controller("CharacterIndexController", [
     "CharacterFactory",
     CharacterIndexControllerFunction
@@ -13,4 +13,3 @@
     this.newCharacter = new CharacterFactory();
   }
 }());
- 

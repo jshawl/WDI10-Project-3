@@ -11,7 +11,7 @@
 
   function MonumentFormDirectiveFunction(MonumentFactory, $state){
     return{
-      templateUrl: "pokemonuments_angular/js/monuments/form.html",
+      templateUrl: "js/monuments/form.html",
       scope: {
       monument: "="
       },

@@ -9,9 +9,8 @@
   ]);
 
   function CharacterFactoryFunction($resource){
-    return $resource("http://localhost:8080/characters/:id", {}, {
+    return $resource("http://localhost:3000/characters/:id", {}, {
       update: {method: "PUT"}
     });
   }
 }());
- 
