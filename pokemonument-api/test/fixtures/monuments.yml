@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  [site: 
+  site_id: 
+  address: 
+  zip: 
+  description: MyText
+  photo_url: 
+
+two:
+  [site: 
+  site_id: 
+  address: 
+  zip: 
+  description: MyText
+  photo_url: 
