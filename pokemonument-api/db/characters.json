@@ -1,0 +1,757 @@
+[
+  {
+    "kdex": "#001",
+    "ndex": "#001",
+    "name": "Bulbasaur"
+  },
+  {
+    "kdex": "#002",
+    "ndex": "#002",
+    "name": "Ivysaur"
+  },
+  {
+    "kdex": "#003",
+    "ndex": "#003",
+    "name": "Venusaur"
+  },
+  {
+    "kdex": "#004",
+    "ndex": "#004",
+    "name": "Charmander"
+  },
+  {
+    "kdex": "#005",
+    "ndex": "#005",
+    "name": "Charmeleon"
+  },
+  {
+    "kdex": "#006",
+    "ndex": "#006",
+    "name": "Charizard"
+  },
+  {
+    "kdex": "#007",
+    "ndex": "#007",
+    "name": "Squirtle"
+  },
+  {
+    "kdex": "#008",
+    "ndex": "#008",
+    "name": "Wartortle"
+  },
+  {
+    "kdex": "#009",
+    "ndex": "#009",
+    "name": "Blastoise"
+  },
+  {
+    "kdex": "#010",
+    "ndex": "#010",
+    "name": "Caterpie"
+  },
+  {
+    "kdex": "#011",
+    "ndex": "#011",
+    "name": "Metapod"
+  },
+  {
+    "kdex": "#012",
+    "ndex": "#012",
+    "name": "Butterfree"
+  },
+  {
+    "kdex": "#013",
+    "ndex": "#013",
+    "name": "Weedle"
+  },
+  {
+    "kdex": "#014",
+    "ndex": "#014",
+    "name": "Kakuna"
+  },
+  {
+    "kdex": "#015",
+    "ndex": "#015",
+    "name": "Beedrill"
+  },
+  {
+    "kdex": "#016",
+    "ndex": "#016",
+    "name": "Pidgey"
+  },
+  {
+    "kdex": "#017",
+    "ndex": "#017",
+    "name": "Pidgeotto"
+  },
+  {
+    "kdex": "#018",
+    "ndex": "#018",
+    "name": "Pidgeot"
+  },
+  {
+    "kdex": "#019",
+    "ndex": "#019",
+    "name": "Rattata"
+  },
+  {
+    "kdex": "#020",
+    "ndex": "#020",
+    "name": "Raticate"
+  },
+  {
+    "kdex": "#021",
+    "ndex": "#021",
+    "name": "Spearow"
+  },
+  {
+    "kdex": "#022",
+    "ndex": "#022",
+    "name": "Fearow"
+  },
+  {
+    "kdex": "#023",
+    "ndex": "#023",
+    "name": "Ekans"
+  },
+  {
+    "kdex": "#024",
+    "ndex": "#024",
+    "name": "Arbok"
+  },
+  {
+    "kdex": "#025",
+    "ndex": "#025",
+    "name": "Pikachu"
+  },
+  {
+    "kdex": "#026",
+    "ndex": "#026",
+    "name": "Raichu"
+  },
+  {
+    "kdex": "#027",
+    "ndex": "#027",
+    "name": "Sandshrew"
+  },
+  {
+    "kdex": "#028",
+    "ndex": "#028",
+    "name": "Sandslash"
+  },
+  {
+    "kdex": "#029",
+    "ndex": "#029",
+    "name": "Nidoran_"
+  },
+  {
+    "kdex": "#030",
+    "ndex": "#030",
+    "name": "Nidorina"
+  },
+  {
+    "kdex": "#031",
+    "ndex": "#031",
+    "name": "Nidoqueen"
+  },
+  {
+    "kdex": "#032",
+    "ndex": "#032",
+    "name": "Nidoran_"
+  },
+  {
+    "kdex": "#033",
+    "ndex": "#033",
+    "name": "Nidorino"
+  },
+  {
+    "kdex": "#034",
+    "ndex": "#034",
+    "name": "Nidoking"
+  },
+  {
+    "kdex": "#035",
+    "ndex": "#035",
+    "name": "Clefairy"
+  },
+  {
+    "kdex": "#036",
+    "ndex": "#036",
+    "name": "Clefable"
+  },
+  {
+    "kdex": "#037",
+    "ndex": "#037",
+    "name": "Vulpix"
+  },
+  {
+    "kdex": "#038",
+    "ndex": "#038",
+    "name": "Ninetales"
+  },
+  {
+    "kdex": "#039",
+    "ndex": "#039",
+    "name": "Jigglypuff"
+  },
+  {
+    "kdex": "#040",
+    "ndex": "#040",
+    "name": "Wigglytuff"
+  },
+  {
+    "kdex": "#041",
+    "ndex": "#041",
+    "name": "Zubat"
+  },
+  {
+    "kdex": "#042",
+    "ndex": "#042",
+    "name": "Golbat"
+  },
+  {
+    "kdex": "#043",
+    "ndex": "#043",
+    "name": "Oddish"
+  },
+  {
+    "kdex": "#044",
+    "ndex": "#044",
+    "name": "Gloom"
+  },
+  {
+    "kdex": "#045",
+    "ndex": "#045",
+    "name": "Vileplume"
+  },
+  {
+    "kdex": "#046",
+    "ndex": "#046",
+    "name": "Paras"
+  },
+  {
+    "kdex": "#047",
+    "ndex": "#047",
+    "name": "Parasect"
+  },
+  {
+    "kdex": "#048",
+    "ndex": "#048",
+    "name": "Venonat"
+  },
+  {
+    "kdex": "#049",
+    "ndex": "#049",
+    "name": "Venomoth"
+  },
+  {
+    "kdex": "#050",
+    "ndex": "#050",
+    "name": "Diglett"
+  },
+  {
+    "kdex": "#051",
+    "ndex": "#051",
+    "name": "Dugtrio"
+  },
+  {
+    "kdex": "#052",
+    "ndex": "#052",
+    "name": "Meowth"
+  },
+  {
+    "kdex": "#053",
+    "ndex": "#053",
+    "name": "Persian"
+  },
+  {
+    "kdex": "#054",
+    "ndex": "#054",
+    "name": "Psyduck"
+  },
+  {
+    "kdex": "#055",
+    "ndex": "#055",
+    "name": "Golduck"
+  },
+  {
+    "kdex": "#056",
+    "ndex": "#056",
+    "name": "Mankey"
+  },
+  {
+    "kdex": "#057",
+    "ndex": "#057",
+    "name": "Primeape"
+  },
+  {
+    "kdex": "#058",
+    "ndex": "#058",
+    "name": "Growlithe"
+  },
+  {
+    "kdex": "#059",
+    "ndex": "#059",
+    "name": "Arcanine"
+  },
+  {
+    "kdex": "#060",
+    "ndex": "#060",
+    "name": "Poliwag"
+  },
+  {
+    "kdex": "#061",
+    "ndex": "#061",
+    "name": "Poliwhirl"
+  },
+  {
+    "kdex": "#062",
+    "ndex": "#062",
+    "name": "Poliwrath"
+  },
+  {
+    "kdex": "#063",
+    "ndex": "#063",
+    "name": "Abra"
+  },
+  {
+    "kdex": "#064",
+    "ndex": "#064",
+    "name": "Kadabra"
+  },
+  {
+    "kdex": "#065",
+    "ndex": "#065",
+    "name": "Alakazam"
+  },
+  {
+    "kdex": "#066",
+    "ndex": "#066",
+    "name": "Machop"
+  },
+  {
+    "kdex": "#067",
+    "ndex": "#067",
+    "name": "Machoke"
+  },
+  {
+    "kdex": "#068",
+    "ndex": "#068",
+    "name": "Machamp"
+  },
+  {
+    "kdex": "#069",
+    "ndex": "#069",
+    "name": "Bellsprout"
+  },
+  {
+    "kdex": "#070",
+    "ndex": "#070",
+    "name": "Weepinbell"
+  },
+  {
+    "kdex": "#071",
+    "ndex": "#071",
+    "name": "Victreebel"
+  },
+  {
+    "kdex": "#072",
+    "ndex": "#072",
+    "name": "Tentacool"
+  },
+  {
+    "kdex": "#073",
+    "ndex": "#073",
+    "name": "Tentacruel"
+  },
+  {
+    "kdex": "#074",
+    "ndex": "#074",
+    "name": "Geodude"
+  },
+  {
+    "kdex": "#075",
+    "ndex": "#075",
+    "name": "Graveler"
+  },
+  {
+    "kdex": "#076",
+    "ndex": "#076",
+    "name": "Golem"
+  },
+  {
+    "kdex": "#077",
+    "ndex": "#077",
+    "name": "Ponyta"
+  },
+  {
+    "kdex": "#078",
+    "ndex": "#078",
+    "name": "Rapidash"
+  },
+  {
+    "kdex": "#079",
+    "ndex": "#079",
+    "name": "Slowpoke"
+  },
+  {
+    "kdex": "#080",
+    "ndex": "#080",
+    "name": "Slowbro"
+  },
+  {
+    "kdex": "#081",
+    "ndex": "#081",
+    "name": "Magnemite"
+  },
+  {
+    "kdex": "#082",
+    "ndex": "#082",
+    "name": "Magneton"
+  },
+  {
+    "kdex": "#083",
+    "ndex": "#083",
+    "name": "Farfetch'd"
+  },
+  {
+    "kdex": "#084",
+    "ndex": "#084",
+    "name": "Doduo"
+  },
+  {
+    "kdex": "#085",
+    "ndex": "#085",
+    "name": "Dodrio"
+  },
+  {
+    "kdex": "#086",
+    "ndex": "#086",
+    "name": "Seel"
+  },
+  {
+    "kdex": "#087",
+    "ndex": "#087",
+    "name": "Dewgong"
+  },
+  {
+    "kdex": "#088",
+    "ndex": "#088",
+    "name": "Grimer"
+  },
+  {
+    "kdex": "#089",
+    "ndex": "#089",
+    "name": "Muk"
+  },
+  {
+    "kdex": "#090",
+    "ndex": "#090",
+    "name": "Shellder"
+  },
+  {
+    "kdex": "#091",
+    "ndex": "#091",
+    "name": "Cloyster"
+  },
+  {
+    "kdex": "#092",
+    "ndex": "#092",
+    "name": "Gastly"
+  },
+  {
+    "kdex": "#093",
+    "ndex": "#093",
+    "name": "Haunter"
+  },
+  {
+    "kdex": "#094",
+    "ndex": "#094",
+    "name": "Gengar"
+  },
+  {
+    "kdex": "#095",
+    "ndex": "#095",
+    "name": "Onix"
+  },
+  {
+    "kdex": "#096",
+    "ndex": "#096",
+    "name": "Drowzee"
+  },
+  {
+    "kdex": "#097",
+    "ndex": "#097",
+    "name": "Hypno"
+  },
+  {
+    "kdex": "#098",
+    "ndex": "#098",
+    "name": "Krabby"
+  },
+  {
+    "kdex": "#099",
+    "ndex": "#099",
+    "name": "Kingler"
+  },
+  {
+    "kdex": "#100",
+    "ndex": "#100",
+    "name": "Voltorb"
+  },
+  {
+    "kdex": "#101",
+    "ndex": "#101",
+    "name": "Electrode"
+  },
+  {
+    "kdex": "#102",
+    "ndex": "#102",
+    "name": "Exeggcute"
+  },
+  {
+    "kdex": "#103",
+    "ndex": "#103",
+    "name": "Exeggutor"
+  },
+  {
+    "kdex": "#104",
+    "ndex": "#104",
+    "name": "Cubone"
+  },
+  {
+    "kdex": "#105",
+    "ndex": "#105",
+    "name": "Marowak"
+  },
+  {
+    "kdex": "#106",
+    "ndex": "#106",
+    "name": "Hitmonlee"
+  },
+  {
+    "kdex": "#107",
+    "ndex": "#107",
+    "name": "Hitmonchan"
+  },
+  {
+    "kdex": "#108",
+    "ndex": "#108",
+    "name": "Lickitung"
+  },
+  {
+    "kdex": "#109",
+    "ndex": "#109",
+    "name": "Koffing"
+  },
+  {
+    "kdex": "#110",
+    "ndex": "#110",
+    "name": "Weezing"
+  },
+  {
+    "kdex": "#111",
+    "ndex": "#111",
+    "name": "Rhyhorn"
+  },
+  {
+    "kdex": "#112",
+    "ndex": "#112",
+    "name": "Rhydon"
+  },
+  {
+    "kdex": "#113",
+    "ndex": "#113",
+    "name": "Chansey"
+  },
+  {
+    "kdex": "#114",
+    "ndex": "#114",
+    "name": "Tangela"
+  },
+  {
+    "kdex": "#115",
+    "ndex": "#115",
+    "name": "Kangaskhan"
+  },
+  {
+    "kdex": "#116",
+    "ndex": "#116",
+    "name": "Horsea"
+  },
+  {
+    "kdex": "#117",
+    "ndex": "#117",
+    "name": "Seadra"
+  },
+  {
+    "kdex": "#118",
+    "ndex": "#118",
+    "name": "Goldeen"
+  },
+  {
+    "kdex": "#119",
+    "ndex": "#119",
+    "name": "Seaking"
+  },
+  {
+    "kdex": "#120",
+    "ndex": "#120",
+    "name": "Staryu"
+  },
+  {
+    "kdex": "#121",
+    "ndex": "#121",
+    "name": "Starmie"
+  },
+  {
+    "kdex": "#122",
+    "ndex": "#122",
+    "name": "Mr. Mime"
+  },
+  {
+    "kdex": "#123",
+    "ndex": "#123",
+    "name": "Scyther"
+  },
+  {
+    "kdex": "#124",
+    "ndex": "#124",
+    "name": "Jynx"
+  },
+  {
+    "kdex": "#125",
+    "ndex": "#125",
+    "name": "Electabuzz"
+  },
+  {
+    "kdex": "#126",
+    "ndex": "#126",
+    "name": "Magmar"
+  },
+  {
+    "kdex": "#127",
+    "ndex": "#127",
+    "name": "Pinsir"
+  },
+  {
+    "kdex": "#128",
+    "ndex": "#128",
+    "name": "Tauros"
+  },
+  {
+    "kdex": "#129",
+    "ndex": "#129",
+    "name": "Magikarp"
+  },
+  {
+    "kdex": "#130",
+    "ndex": "#130",
+    "name": "Gyarados"
+  },
+  {
+    "kdex": "#131",
+    "ndex": "#131",
+    "name": "Lapras"
+  },
+  {
+    "kdex": "#132",
+    "ndex": "#132",
+    "name": "Ditto"
+  },
+  {
+    "kdex": "#133",
+    "ndex": "#133",
+    "name": "Eevee"
+  },
+  {
+    "kdex": "#134",
+    "ndex": "#134",
+    "name": "Vaporeon"
+  },
+  {
+    "kdex": "#135",
+    "ndex": "#135",
+    "name": "Jolteon"
+  },
+  {
+    "kdex": "#136",
+    "ndex": "#136",
+    "name": "Flareon"
+  },
+  {
+    "kdex": "#137",
+    "ndex": "#137",
+    "name": "Porygon"
+  },
+  {
+    "kdex": "#138",
+    "ndex": "#138",
+    "name": "Omanyte"
+  },
+  {
+    "kdex": "#139",
+    "ndex": "#139",
+    "name": "Omastar"
+  },
+  {
+    "kdex": "#140",
+    "ndex": "#140",
+    "name": "Kabuto"
+  },
+  {
+    "kdex": "#141",
+    "ndex": "#141",
+    "name": "Kabutops"
+  },
+  {
+    "kdex": "#142",
+    "ndex": "#142",
+    "name": "Aerodactyl"
+  },
+  {
+    "kdex": "#143",
+    "ndex": "#143",
+    "name": "Snorlax"
+  },
+  {
+    "kdex": "#144",
+    "ndex": "#144",
+    "name": "Articuno"
+  },
+  {
+    "kdex": "#145",
+    "ndex": "#145",
+    "name": "Zapdos"
+  },
+  {
+    "kdex": "#146",
+    "ndex": "#146",
+    "name": "Moltres"
+  },
+  {
+    "kdex": "#147",
+    "ndex": "#147",
+    "name": "Dratini"
+  },
+  {
+    "kdex": "#148",
+    "ndex": "#148",
+    "name": "Dragonair"
+  },
+  {
+    "kdex": "#149",
+    "ndex": "#149",
+    "name": "Dragonite"
+  },
+  {
+    "kdex": "#150",
+    "ndex": "#150",
+    "name": "Mewtwo"
+  },
+  {
+    "kdex": "#151",
+    "ndex": "#151",
+    "name": "Mew"
+  }
+] 
