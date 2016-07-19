@@ -5,8 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>[site</th>
-      <th>Site</th>
+      <th>site</th>
+      <th>Site ID</th>
       <th>Address</th>
       <th>Zip</th>
       <th>Description</th>
@@ -18,8 +18,8 @@
   <tbody>
     <% @monuments.each do |monument| %>
       <tr>
-        <td><%= monument.[site %></td>
-        <td><%= monument.site_id %></td>
+        <td><%= monument.site %></td>
+        <td><%= monument.id %></td>
         <td><%= monument.address %></td>
         <td><%= monument.zip %></td>
         <td><%= monument.description %></td>

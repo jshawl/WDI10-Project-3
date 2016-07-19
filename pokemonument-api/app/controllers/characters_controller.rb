@@ -14,11 +14,20 @@ class CharactersController < ApplicationController
   # GET /characters/1
   # GET /characters/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.json {render json: Character.all}
+    end
   end
 
   # GET /characters/new
   def new
     @character = Character.new
+    if @character.save
+      render json: @character.to_json, status: :created
+    else
+      render json: @character.errors, status: :unprocessable_entity
+    end
   end
 
   # GET /characters/1/edit
@@ -73,6 +82,6 @@ class CharactersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def character_params
-      params.require(:character).permit(:[name, :kdex, :ndex)
+      params.require(:character).permit(:name, :kdex, :ndex)
     end
 end
