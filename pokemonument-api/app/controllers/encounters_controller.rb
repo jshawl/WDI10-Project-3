@@ -5,6 +5,7 @@ class EncountersController < ApplicationController
   # GET /encounters.json
   def index
     @encounters = Encounter.all
+
   end
 
   # GET /encounters/1
@@ -69,6 +70,6 @@ class EncountersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def encounter_params
-      params.require(:encounter).permit(:[site, :site_id, :comment)
+      params.require(:encounter).permit(:site, :site_id, :comment)
     end
 end
