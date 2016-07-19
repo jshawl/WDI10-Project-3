@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>site:</strong>
+  <%= @monument.site %>
+</p>
+
+<p>
+  <strong>Site:</strong>
+  <%= @monument.id %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @monument.address %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @monument.zip %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @monument.description %>
+</p>
+
+<p>
+  <strong>Photo url:</strong>
+  <%= @monument.photo_url %>
+</p>
+
+<%= link_to 'Edit', edit_monument_path(@monument) %> |
+<%= link_to 'Back', monuments_path %>
