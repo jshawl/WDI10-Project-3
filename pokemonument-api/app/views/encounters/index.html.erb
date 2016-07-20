@@ -8,8 +8,9 @@
       <th>User</th>
       <th>Site</th>
       <th>Character</th>
+      <th>Date</th>
       <th>Comment</th>
-      <th colspan="4"></th>
+      <th colspan="5"></th>
     </tr>
   </thead>
 
@@ -19,6 +20,7 @@
         <td><%= encounter.user %></td>
         <td><%= encounter.monument_id %></td>
         <td><%= encounter.character_id %></td>
+        <td><%= encounter.date %></td>
         <td><%= encounter.comment %></td>
         <td><%= link_to 'Show', encounter %></td>
         <td><%= link_to 'Edit', edit_encounter_path(encounter) %></td>

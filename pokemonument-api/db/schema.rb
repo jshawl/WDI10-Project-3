@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160719211420) do
+ActiveRecord::Schema.define(version: 20160720155629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,22 +24,24 @@ ActiveRecord::Schema.define(version: 20160719211420) do
   end
 
   create_table "encounters", force: :cascade do |t|
-    t.integer  "user"
+    t.string   "user"
     t.integer  "character_id"
     t.integer  "monument_id"
     t.text     "comment"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.date     "date"
   end
 
   create_table "monuments", force: :cascade do |t|
-    t.string   "name"
+    t.string   "site"
     t.string   "address"
     t.string   "zip"
     t.text     "description"
     t.string   "photo_url"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "city"
   end
 
   create_table "users", force: :cascade do |t|
@@ -59,6 +61,4 @@ ActiveRecord::Schema.define(version: 20160719211420) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "encounters", "characters"
-  add_foreign_key "encounters", "monuments"
 end

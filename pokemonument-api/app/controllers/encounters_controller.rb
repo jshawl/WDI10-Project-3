@@ -70,6 +70,6 @@ class EncountersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def encounter_params
-      params.require(:encounter).permit(:user, :character_id, :monument_id, :comment)
+      params.require(:encounter).permit(:user, :character_id, :monument_id, :date, :comment)
     end
 end
