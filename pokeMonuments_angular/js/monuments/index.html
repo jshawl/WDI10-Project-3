@@ -18,10 +18,11 @@
 </div>
 
 <h2>These are all the pokeMonuments</h2>
-<a href="http://localhost:3000/characters.json">Whats good </a>
 
-<div data-ng-repeat="character in CharacterIndexViewModel.Character | orderBy:'-created_at'">
+<a href="http://localhost:3000/characters.json">This is a link to the character data</a>
+
+<div data-ng-repeat="character in MonumentIndexViewModel.Characters | orderBy:'-created_at'">
     <p><a data-ui-sref={{character.name}}></a></a></p>
-{{'Hello!'}}
+
 </div>
 <!-- "characterShow({id: character.id})" -->

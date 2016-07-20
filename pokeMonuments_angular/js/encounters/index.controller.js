@@ -11,6 +11,6 @@
   function EncounterIndexControllerFunction(EncounterFactory){
     this.Encounter = EncounterFactory.query();
     this.newEncounter = new EncounterFactory();
+      console.log(this.Encounter);
   }
 }());
- 
