@@ -69,6 +69,6 @@ class MonumentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def monument_params
-      params.require(:monument).permit(:site, :site_id, :address, :zip, :description, :photo_url)
+      params.require(:monument).permit(:name, :address, :zip, :description, :photo_url)
     end
 end

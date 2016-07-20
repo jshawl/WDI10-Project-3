@@ -5,19 +5,19 @@
 <table>
   <thead>
     <tr>
-      <th>Site</th>
+      <th>Name</th>
       <th>Address</th>
       <th>Zip</th>
       <th>Description</th>
       <th>Photo url</th>
-      <th colspan="3"></th>
+      <th colspan="5"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @monuments.each do |monument| %>
       <tr>
-        <td><%= monument.site %></td>
+        <td><%= monument.name %></td>
         <td><%= monument.address %></td>
         <td><%= monument.zip %></td>
         <td><%= monument.description %></td>

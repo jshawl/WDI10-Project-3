@@ -1,1 +1,1 @@
-json.extract! @encounter, :id, :[site, :site_id, :comments, :created_at, :updated_at
+json.extract! @encounter, :id, :user, :monument_id, :site_id, :comment, :created_at, :updated_at

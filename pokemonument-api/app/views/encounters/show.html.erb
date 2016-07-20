@@ -1,18 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>[site:</strong>
-  <%= @encounter.[site %>
+  <strong>User:</strong>
+  <%= @encounter.user %>
 </p>
 
 <p>
   <strong>Site:</strong>
-  <%= @encounter.site_id %>
+  <%= @encounter.monument_id %>
 </p>
 
 <p>
-  <strong>Comments:</strong>
-  <%= @encounter.comments %>
+  <strong>Character:</strong>
+  <%= @encounter.character_id %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @encounter.comment %>
 </p>
 
 <%= link_to 'Edit', edit_encounter_path(@encounter) %> |

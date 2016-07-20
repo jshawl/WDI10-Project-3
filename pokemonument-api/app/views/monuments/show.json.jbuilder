@@ -1,1 +1,1 @@
-json.extract! @monument, :id, :site, :address, :zip, :description, :photo_url, :created_at, :updated_at
+json.extract! @monument, :id, :name, :address, :zip, :description, :photo_url, :created_at, :updated_at

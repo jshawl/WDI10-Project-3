@@ -1,4 +1,4 @@
 json.array!(@encounters) do |encounter|
-  json.extract! encounter, :id, :site, :site_id, :comments
+  json.extract! encounter, :id, :user, :character_id, :monument_id, :comment
   json.url encounter_url(encounter, format: :json)
 end
