@@ -28,12 +28,7 @@
       templateUrl: "js/monuments/show.html",
       controller: "MonumentShowController",
       controllerAs: "MonumentShowViewModel"
-    });
-
-
-    function RouterFunction($stateProvider, $locationProvider){
-      $locationProvider.html5Mode(true);
-      $stateProvider
+    })
       .state("encounterIndex", {
         url: "/",
         templateUrl: "pokemonuments_angular/js/encounters/index.html",
@@ -45,12 +40,7 @@
         templateUrl: "js/encounters/show.html",
         controller: "EncounterShowController",
         controllerAs: "EncounterShowViewModel"
-      });
-
-
-      function RouterFunction($stateProvider, $locationProvider){
-        $locationProvider.html5Mode(true);
-        $stateProvider
+      })
         .state("characterIndex", {
           url: "/",
           templateUrl: "pokemonuments_angular/js/characters/index.html",

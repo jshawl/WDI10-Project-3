@@ -10,6 +10,7 @@
 
   function CharacterIndexControllerFunction(CharacterFactory){
     this.Character = CharacterFactory.query();
-    this.newCharacter = new CharacterFactory();
+console.log(this.Character);
+//    this.newCharacter = new CharacterFactory();
   }
 }());
