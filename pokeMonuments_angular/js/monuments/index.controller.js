@@ -10,7 +10,7 @@
 
   function MonumentIndexControllerFunction(MonumentFactory){
     this.Monument = MonumentFactory.query();
-    this.newMonument = new MonumentFactory();
+    console.log(this.Monument);
+//    this.newMonument = new MonumentFactory();
   }
 }());
- 

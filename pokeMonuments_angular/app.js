@@ -28,9 +28,21 @@
       templateUrl: "js/monuments/show.html",
       controller: "MonumentShowController",
       controllerAs: "MonumentShowViewModel"
+    })
+    .state("characterIndex", {
+      url: "/",
+      templateUrl: "js/characters/index.html",
+      controller: "CharacterIndexController",
+      controllerAs: "CharacterIndexViewModel"
+    })
+    .state("characterShow", {
+      url: "/:id",
+      templateUrl: "js/characters/show.html",
+      controller: "CharacterShowController",
+      controllerAs: "CharacterShowViewModel"
     });
 
-
+/*
     function RouterFunction($stateProvider, $locationProvider){
       $locationProvider.html5Mode(true);
       $stateProvider
@@ -63,8 +75,7 @@
           controller: "CharacterShowController",
           controllerAs: "CharacterShowViewModel"
         });
-
       }
+}*/
     }
-  }
 }());
