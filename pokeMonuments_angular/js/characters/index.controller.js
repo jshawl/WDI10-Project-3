@@ -5,12 +5,13 @@
   .module("characters",[])
   .controller("CharacterIndexController", [
     "CharacterFactory",
+    "MonumentFactory",
     CharacterIndexControllerFunction
   ]);
 
-  function CharacterIndexControllerFunction(CharacterFactory){
-    this.Character = CharacterFactory.query();
-    console.log(this.Character);
+  function CharacterIndexControllerFunction(CharacterFactory, MonumentFactory){
+    this.characters = CharacterFactory.query()
+    this.Monuments = MonumentFactory.query();
 //    this.newCharacter = new CharacterFactory();
   }
 }());

@@ -18,25 +18,25 @@
     $locationProvider.html5Mode(true);
     $stateProvider
     .state("monumentIndex", {
-      url: "/",
+      url: "/monuments",
       templateUrl: "js/monuments/index.html",
       controller: "MonumentIndexController",
       controllerAs: "MonumentIndexViewModel"
     })
     .state("monumentShow", {
-      url: "/:id",
+      url: "/moments/:id",
       templateUrl: "js/monuments/show.html",
       controller: "MonumentShowController",
       controllerAs: "MonumentShowViewModel"
     })
     .state("characterIndex", {
-      url: "/",
+      url: "/characters",
       templateUrl: "js/characters/index.html",
       controller: "CharacterIndexController",
       controllerAs: "CharacterIndexViewModel"
     })
     .state("characterShow", {
-      url: "/:id",
+      url: "/characters/:id",
       templateUrl: "js/characters/show.html",
       controller: "CharacterShowController",
       controllerAs: "CharacterShowViewModel"

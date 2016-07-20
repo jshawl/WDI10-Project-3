@@ -21,8 +21,8 @@
 
 <a href="http://localhost:3000/characters.json">This is a link to the character data</a>
 
-<div data-ng-repeat="character in MonumentIndexViewModel.Characters | orderBy:'-created_at'">
-    <p><a data-ui-sref={{character.name}}></a></a></p>
+<div data-ng-repeat= "character in CharacterIndexViewModel.Characters | orderBy:'-created_at'">
+    <p><a data-ui-sref={{character.name}}></a></p>
 
 </div>
 <!-- "characterShow({id: character.id})" -->

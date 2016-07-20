@@ -5,12 +5,15 @@
   .module("encounters")
   .controller("EncounterIndexController", [
     "EncounterFactory",
+    "CharacterFactory",
+    "MonumentFactory",
     EncounterIndexControllerFunction
   ]);
 
-  function EncounterIndexControllerFunction(EncounterFactory){
+  function EncounterIndexControllerFunction(EncounterFactory,CharacterFactory,MonumentFactory){
     this.Encounter = EncounterFactory.query();
-    this.newEncounter = new EncounterFactory();
-      console.log(this.Encounter);
+    this.newEncounter = new EncounterFactory()
+    this.Characters = CharacterFactory.query()
+    this.Monuments = MonumentFactory.query();
   }
 }());
