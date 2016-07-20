@@ -1,9 +1,27 @@
-<h2>pokeMonuments</h2>
-
+<!--
 <div data-monument-form data-monument="MonumentIndexViewModel.newMonument"></div>
+-->
 
 <h2>These are all the Monuments</h2>
 
-<div data-ng-repeat="monuments in MonumentIndexViewModel.monument | orderBy:'-created_at'">
+<div data-ng-repeat="monuments in MonumentIndexViewModel.Monument | orderBy:'-created_at'">
+<h3>{{monuments.site}}</h3>
+<a href="/">Pokemon Encounters</a><br />
+<!-- Could link to encounters for this location -->
+{{monuments.description}}
+<h5>zipcode: {{monuments.zip}}</h5>
+<!--
+<img src={{monuments.photo_url}} alt="Monument Photo" />
+-->
   <p><a data-ui-sref="monumentShow({id: character.id})">{{monument.title}}</a></p>
+
 </div>
+
+<h2>These are all the pokeMonuments</h2>
+<a href="http://localhost:3000/characters.json">Whats good </a>
+
+<div data-ng-repeat="character in CharacterIndexViewModel.Character | orderBy:'-created_at'">
+    <p><a data-ui-sref={{character.name}}></a></a></p>
+{{'Hello!'}}
+</div>
+<!-- "characterShow({id: character.id})" -->
