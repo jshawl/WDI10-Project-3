@@ -10,7 +10,7 @@
 
   function CharacterFactoryFunction($resource){
 console.log("test");
-    return $resource("http://localhost:3000/characters/:id.json", {}, {
+    return $resource("https://pokemonuments.herokuapp.com/characters/:id.json", {}, {
       update: {method: "PUT"}
     });
   }

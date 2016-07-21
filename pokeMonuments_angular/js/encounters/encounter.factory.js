@@ -9,7 +9,7 @@
   ]);
 
   function EncounterFactoryFunction($resource){
-    return $resource("http://localhost:3000/encounters/:id.json", {}, {
+    return $resource("https://pokemonuments.herokuapp.com/encounters/:id.json", {}, {
       update: {method: "PUT"}
     });
   }

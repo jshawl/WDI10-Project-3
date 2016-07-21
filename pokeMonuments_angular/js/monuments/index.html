@@ -2,27 +2,69 @@
 <div data-monument-form data-monument="MonumentIndexViewModel.newMonument"></div>
 -->
 
-<h2>These are all the Monuments</h2>
+<h2>Here's all of DC's landmarks where you can catch Pokemon! </h2>
 
-<div data-ng-repeat="monuments in MonumentIndexViewModel.Monument | orderBy:'-created_at'">
-<h3>{{monuments.site}}</h3>
-<a href="/">Pokemon Encounters</a><br />
-<!-- Could link to encounters for this location -->
-{{monuments.description}}
-<h5>zipcode: {{monuments.zip}}</h5>
+<!-- <div data-ng-repeat="monuments in MonumentIndexViewModel.Monument | orderBy:'-created_at'"> -->
+  <table class="table table-striped">
+      <thead>
+        <tr data-ng-repeat= "monuments in MonumentIndexViewModel.Monument| filter: vm.filter_on ">
+          <th>Name:{{monuments.site}}</th>
+          <!-- <th>Number:{{monuments.adress}}</th> -->
+          <th>group:{{monuments.description}}</th>
+          <th><img src= "https://maps.googleapis.com/maps/api/staticmap?center={{monuments.site}},Washington,DC&zoom=13&size=400x400&
+markers=color:blue%7Clabel:P%7C{{monuments.site}},Washington,DC"/> </th>
+        </tr>
+      </thead>
+    </table>
+
+
+
+
+
+
+
+
+
+
+<!-- <h3>{{monuments.site}}</h3> -->
+<!-- <data-ui-sref="/monuments/:id">{{monuments.site}}</a><br/>
+Could link to encounters for this location -->
+<!-- {{monuments.description}}
+<h5>zipcode: {{monuments.zip}}</h5> --> -->
+
+
+<!-- orderBy:'-created_at'" -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!--
 <img src={{monuments.photo_url}} alt="Monument Photo" />
 -->
-  <p><a data-ui-sref="monumentShow({id: character.id})">{{monument.title}}</a></p>
+  <!-- <p><a data-ui-sref="monumentShow({id: character.id})">{{monument.title}}</a></p>
 
 </div>
 
-<h2>These are all the pokeMonuments</h2>
+<h2>D.C's Most Popular Monuments</h2>
 
 <a href="http://localhost:3000/characters.json">This is a link to the character data</a>
 
 <div data-ng-repeat= "character in CharacterIndexViewModel.Characters | orderBy:'-created_at'">
     <p><a data-ui-sref={{character.name}}></a></p>
 
-</div>
-<!-- "characterShow({id: character.id})" -->
+</div> -->
+<!-- "characterShow({id: character.id})"

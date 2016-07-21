@@ -1,10 +1,6 @@
 <h2>pokeMonuments</h2>
-
-<div data-character-form data-character="CharacterIndexViewModel.newCharacter"></div>
-
-<h2>These are all the pokeMonuments</h2>
-<h3> Whats good <h3>
+<h2>Here are all of the available Pokemon</h2>
 <div data-ng-repeat="character in CharacterIndexViewModel.characters | orderBy:'-created_at'">
-  <h3>{{character.name}}</h3>
+  <a data-ui-sref= "characterShow({id: $stateParams.id})">{{character.name}}</a>
 
 </div>

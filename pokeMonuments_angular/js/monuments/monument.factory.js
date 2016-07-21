@@ -9,7 +9,7 @@
   ]);
 
   function MonumentFactoryFunction($resource){
-    return $resource("http://localhost:3000/monuments/:id.json", {}, {
+    return $resource("https://pokemonuments.herokuapp.com/monuments/:id.json", {}, {
       update: {method: "PUT"}
     });
   }

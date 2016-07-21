@@ -9,7 +9,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-resource.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <base href="/" />
+  <!-- <base href="/" /> -->
 
   <script src="/js/characters/characters.js"></script>
   <script src="/js/characters/index.controller.js"></script>
@@ -50,11 +50,10 @@
 
   </header>
   <body>
-    <div class ="col-xs-8 col-xs-offset-1" >
+    <div class ="col-xs-8 col-xs-offset-2" >
       <img class="mainImage" src="Images/CapitalLogo.png" alt="capitol">
     </div>
-    <div class ="col-xs-10 "
-    <h1><a data-ui-sref="characterIndex">pokemonuments</a></h1>
+    <div class ="col-xs-10 col-offset-xs-1" id= "text-body"> 
     <main data-ui-view></main>
 
 

@@ -15,7 +15,7 @@
   ]);
 
   function RouterFunction($stateProvider, $locationProvider){
-    $locationProvider.html5Mode(true);
+    // $locationProvider.html5Mode(true);
     $stateProvider
     .state("monumentIndex", {
       url: "/monuments",
@@ -24,7 +24,7 @@
       controllerAs: "MonumentIndexViewModel"
     })
     .state("monumentShow", {
-      url: "/moments/:id",
+      url: "/monuments/:id",
       templateUrl: "js/monuments/show.html",
       controller: "MonumentShowController",
       controllerAs: "MonumentShowViewModel"
@@ -40,42 +40,36 @@
       templateUrl: "js/characters/show.html",
       controller: "CharacterShowController",
       controllerAs: "CharacterShowViewModel"
-    });
-
-/*
-    function RouterFunction($stateProvider, $locationProvider){
-      $locationProvider.html5Mode(true);
-      $stateProvider
+    })
       .state("encounterIndex", {
-        url: "/",
+        url: "/encounters",
         templateUrl: "js/encounters/index.html",
         controller: "EncounterIndexController",
         controllerAs: "EncounterIndexViewModel"
       })
       .state("encounterShow", {
-        url: "/:id",
+        url: "/encounters/:id",
         templateUrl: "js/encounters/show.html",
         controller: "EncounterShowController",
         controllerAs: "EncounterShowViewModel"
       });
 
-
-      function RouterFunction($stateProvider, $locationProvider){
-        $locationProvider.html5Mode(true);
-        $stateProvider
-        .state("characterIndex", {
-          url: "/",
-          templateUrl: "js/characters/index.html",
-          controller: "CharacterIndexController",
-          controllerAs: "CharacterIndexViewModel"
-        })
-        .state("characterShow", {
-          url: "/:id",
-          templateUrl: "js/characters/show.html",
-          controller: "CharacterShowController",
-          controllerAs: "CharacterShowViewModel"
-        });
-      }
-}*/
-    }
+//
+//       function RouterFunction($stateProvider, $locationProvider){
+//         $locationProvider.html5Mode(true);
+//         $stateProvider
+//         .state("characterIndex", {
+//           url: "/",
+//           templateUrl: "js/characters/index.html",
+//           controller: "CharacterIndexController",
+//           controllerAs: "CharacterIndexViewModel"
+//         })
+//         .state("characterShow", {
+//           url: "/:id",
+//           templateUrl: "js/characters/show.html",
+//           controller: "CharacterShowController",
+//           controllerAs: "CharacterShowViewModel"
+//         });
+//       }
+ }
 }());
