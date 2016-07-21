@@ -51,7 +51,7 @@
         url: "/encounters/:id",
         templateUrl: "js/encounters/show.html",
         controller: "EncounterShowController",
-        controllerAs: "EncounterShowViewModel"
+        controllerAs: "vm"
       });
 
 //

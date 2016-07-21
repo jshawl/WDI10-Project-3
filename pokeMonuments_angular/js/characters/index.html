@@ -2,5 +2,5 @@
 <h2>Here are all of the available Pokemon</h2>
 <div data-ng-repeat="character in CharacterIndexViewModel.characters | orderBy:'-created_at'">
   <a data-ui-sref= "characterShow({id: $stateParams.id})">{{character.name}}</a>
-
+  <img src= "characterShow({id: $stateParams.id})">{{character.photo_url}}>
 </div>

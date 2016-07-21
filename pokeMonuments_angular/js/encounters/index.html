@@ -2,9 +2,7 @@
 
 <div data-encounter-form data-encounter="EncounterIndexViewModel.newEncounter"></div>
 
-<h2>These are all the pokeMonuments</h2>
 
 <div data-ng-repeat="encounter in EncounterIndexViewModel.Encounter | orderBy:'-created_at'">
-  dfslfjlksdjf
   <p><a data-ui-sref="encounterShow({id: encounter.id})">{{encounter.id}}</a></p>
 </div>
