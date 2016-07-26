@@ -4,6 +4,6 @@
 
 <h2>These are all the pokeMonuments</h2>
 
-<div data-ng-repeat="encounter in EncounterIndexViewModel.encounter | orderBy:'-created_at'">
+<div data-ng-repeat="encounter in EncounterIndexViewModel.encounters | orderBy:'-created_at'">
   <p><a data-ui-sref="encounterShow({id: encounter.id})">{{encounter.monumentsID}}</a></p>
 </div>

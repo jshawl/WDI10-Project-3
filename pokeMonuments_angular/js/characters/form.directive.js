@@ -10,10 +10,11 @@
   ]);
 
   function CharacterFormDirectiveFunction(CharacterFactory, $state){
+    // nice job attempting the custom directive!
     return{
       templateUrl: "js/characters/form.html",
       scope: {
-        grumble: "="
+        grumble: "=" // should be character
       },
       link: function(scope){
         scope.create = function(){

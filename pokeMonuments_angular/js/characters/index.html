@@ -4,6 +4,8 @@
 
 <h2>These are all the pokeMonuments</h2>
 <h3> Whats good <h3>
+<!-- looks like character is Character in index controller.
+also singular and not plural -->
 <div data-ng-repeat="character in CharacterIndexViewModel.characters | orderBy:'-created_at'">
   <p><a data-ui-sref="characterShow({id: character.id})">{{character.title}}</a></p>
 </div>

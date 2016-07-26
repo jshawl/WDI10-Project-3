@@ -10,6 +10,7 @@
   ]);
 
   function MonumentFormDirectiveFunction(MonumentFactory, $state){
+  // this directive looks good!
     return{
       templateUrl: "js/monuments/form.html",
       scope: {

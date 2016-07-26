@@ -9,7 +9,7 @@
   ]);
 
   function EncounterIndexControllerFunction(EncounterFactory){
-    this.Encounter = EncounterFactory.query();
+    this.encounters = EncounterFactory.query();
     this.newEncounter = new EncounterFactory();
   }
 }());

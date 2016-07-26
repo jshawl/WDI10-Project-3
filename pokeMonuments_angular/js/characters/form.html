@@ -1,5 +1,6 @@
 <form>
   <input placeholder="Name" data-ng-model="character.name" />
+  <!-- consider adding labels in  addition to placeholders for accessibility -->
   <input placeholder="Pokemon ID" data-ng-model="character.id" />
   <input placeholder="Description" data-ng-model="character.description" />
   <button type="button" data-ng-if="!character.id" data-ng-click="create()">Create</button>

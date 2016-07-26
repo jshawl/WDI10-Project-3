@@ -13,7 +13,7 @@
     return{
       templateUrl: "js/encounters/form.html",
       scope: {
-        grumble: "="
+        encounter: "="
       },
       link: function(scope){
         scope.create = function(){
